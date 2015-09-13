@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Ayush
+ * @author VarunJain
  */
 public class APCourseProject extends Application {
     

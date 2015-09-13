@@ -23,7 +23,7 @@ import javafx.scene.control.ToggleGroup;
 
 /**
  *
- * @author Ayush
+ * @author VarunJain
  */
 public class ApplicantController implements Initializable {
     @FXML
@@ -167,3 +167,4 @@ public class ApplicantController implements Initializable {
     }    
     
 }
+
