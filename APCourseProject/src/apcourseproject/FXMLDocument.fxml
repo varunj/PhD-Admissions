@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" prefHeight="1727.0" prefWidth="1059.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apcourseproject.ApplicantController">
+   <children>
+      <ImageView fitHeight="57.0" fitWidth="1059.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../Desktop/scene.PNG" />
+         </image>
+      </ImageView>
+      <Hyperlink fx:id="linkcontact" layoutX="913.0" layoutY="8.0" text="Contact" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink fx:id="linkfaq" layoutX="839.0" layoutY="8.0" text="FAQ" textFill="#fcfcfc">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Hyperlink>
+      <ImageView fitHeight="70.0" fitWidth="1000.0" layoutX="30.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Desktop/scene2.PNG" />
+         </image>
+      </ImageView>
+      <TabPane layoutY="111.0" prefHeight="1647.0" prefWidth="1059.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tab1" text="Personal Information">
+               <content>
+                  <ScrollPane fx:id="scroll1" maxHeight="-Infinity" prefHeight="914.0" prefWidth="1059.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1606.0" prefWidth="1057.0">
+                           <children>
+                              <Label fx:id="t1lab2" layoutX="109.0" layoutY="97.0" text="Name" />
+                              <Label fx:id="t1lab1" layoutX="117.0" layoutY="42.0" text="Email" />
+                              <Label fx:id="t1lab5" layoutX="106.0" layoutY="287.0" text="Mobile" />
+                              <Label fx:id="t1lab3" layoutX="32.0" layoutY="148.0" text="Enrollment number" />
+                              <Label fx:id="t1lab4" layoutX="23.0" layoutY="207.0" text="Address of Reference" />
+                              <TextField fx:id="t1text3" layoutX="175.0" layoutY="143.0" prefHeight="31.0" prefWidth="711.0" />
+                              <TextField fx:id="t1text5" layoutX="175.0" layoutY="282.0" prefHeight="31.0" prefWidth="711.0" />
+                              <TextField fx:id="t1text1" layoutX="175.0" layoutY="37.0" prefHeight="31.0" prefWidth="711.0" />
+                              <TextField fx:id="t1text4" layoutX="175.0" layoutY="187.0" prefHeight="81.0" prefWidth="711.0" />
+                              <TextField fx:id="t1text2" layoutX="175.0" layoutY="92.0" prefHeight="31.0" prefWidth="711.0" />
+                              <Label fx:id="t1lab6" layoutX="70.0" layoutY="358.0" prefHeight="21.0" prefWidth="94.0" text="PhD Stream" />
+                              <RadioButton fx:id="t1rb1" layoutX="175.0" layoutY="358.0" mnemonicParsing="false" text="Computer Science">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="t1tg1" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="t1rb3" layoutX="175.0" layoutY="455.0" mnemonicParsing="false" text="Computational Biology" toggleGroup="$t1tg1" />
+                              <RadioButton fx:id="t1rb2" layoutX="175.0" layoutY="408.0" mnemonicParsing="false" text="Electronics and Communication" toggleGroup="$t1tg1" />
+                              <Label fx:id="t1lab7" layoutX="21.0" layoutY="509.0" prefHeight="21.0" prefWidth="144.0" text="PhD Area Reference 1" />
+                              <TextField fx:id="t1text6" layoutX="182.0" layoutY="504.0" prefHeight="31.0" prefWidth="367.0" />
+                              <TextField fx:id="t1text7" layoutX="181.0" layoutY="561.0" prefHeight="31.0" prefWidth="358.0" />
+                              <TextField fx:id="t1text8" layoutX="182.0" layoutY="617.0" prefHeight="31.0" prefWidth="367.0" />
+                              <Label layoutX="16.0" layoutY="611.0" prefHeight="21.0" prefWidth="155.0" text="PhD Area Reference 3" />
+                              <Label fx:id="t1lab8" layoutX="19.0" layoutY="561.0" prefHeight="21.0" prefWidth="154.0" text="PhD Area Reference 2" />
+                              <Label layoutX="111.0" layoutY="677.0" prefHeight="21.0" prefWidth="77.0" text="Gender" />
+                              <Label layoutX="105.0" layoutY="753.0" text="Category" />
+                              <Label layoutX="45.0" layoutY="838.0" prefHeight="21.0" prefWidth="128.0" text="Physically Disabled" />
+                              <RadioButton fx:id="t1rb4" layoutX="188.0" layoutY="677.0" mnemonicParsing="false" text="Male">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="t1tg2" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="t1rb5" layoutX="190.0" layoutY="713.0" mnemonicParsing="false" text="Female" toggleGroup="$t1tg2" />
+                              <RadioButton fx:id="t1rb6" layoutX="188.0" layoutY="753.0" mnemonicParsing="false" text="General">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="t1tg3" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="t1rb7" layoutX="188.0" layoutY="791.0" mnemonicParsing="false" text="SC" toggleGroup="$t1tg3" />
+                              <RadioButton fx:id="t1rb10" layoutX="188.0" layoutY="838.0" mnemonicParsing="false" text="Yes">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="t1tg4" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="t1rb11" layoutX="188.0" layoutY="878.0" mnemonicParsing="false" text="No" toggleGroup="$t1tg4" />
+                              <Label layoutX="87.0" layoutY="924.0" text="Date of Birth" />
+                              <DatePicker fx:id="t1dp" layoutX="189.0" layoutY="919.0" prefHeight="31.0" prefWidth="281.0" />
+                              <Label layoutX="30.0" layoutY="988.0" prefHeight="33.0" prefWidth="151.0" text="Children/War Widows of Defence Personnel killed/Disabled in Action*" />
+                              <RadioButton fx:id="t1rb12" layoutX="188.0" layoutY="994.0" mnemonicParsing="false" text="Yes">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="t1tg5" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="t1rb13" layoutX="188.0" layoutY="1040.0" mnemonicParsing="false" text="No" toggleGroup="$t1tg5" />
+                              <RadioButton fx:id="t1rb8" layoutX="311.0" layoutY="791.0" mnemonicParsing="false" text="ST" toggleGroup="$t1tg3" />
+                              <RadioButton fx:id="t1rb9" layoutX="429.0" layoutY="791.0" mnemonicParsing="false" text="OBC" toggleGroup="$t1tg3" />
+                              <Label layoutX="75.0" layoutY="1083.0" text="Father's Name" />
+                              <TextField fx:id="t1text9" layoutX="188.0" layoutY="1078.0" prefHeight="31.0" prefWidth="374.0" />
+                              <Label layoutX="99.0" layoutY="1137.0" text="Nationality" />
+                              <TextField fx:id="t1text10" layoutX="188.0" layoutY="1132.0" prefHeight="31.0" prefWidth="374.0" />
+                              <Label layoutX="46.0" layoutY="1202.0" text="Permanent Address" />
+                              <TextField fx:id="t1text11" layoutX="192.0" layoutY="1197.0" prefHeight="108.0" prefWidth="372.0" />
+                              <Label layoutX="112.0" layoutY="1335.0" text="Pincode" />
+                              <TextField fx:id="t1text12" layoutX="192.0" layoutY="1330.0" prefHeight="31.0" prefWidth="370.0" />
+                              <Button layoutX="143.0" layoutY="1408.0" mnemonicParsing="false" text="Save" textFill="#2938da" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </content>
+          </Tab>
+          <Tab text="Education Information">
+               <content>
+                  <ScrollPane maxHeight="-Infinity" prefHeight="941.0" prefWidth="1059.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1651.0" prefWidth="1052.0">
+                           <children>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1608.0" prefWidth="1051.0">
+                                 <children>
+                                    <Separator layoutX="33.0" layoutY="83.0" prefHeight="0.0" prefWidth="994.0" />
+                                    <Label layoutX="42.0" layoutY="43.0" text="Schooling Information">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="108.0" layoutY="129.0" text="Xth Board*" />
+                                    <Label layoutX="81.0" layoutY="167.0" text="Xth Marks (%)*" />
+                                    <Label layoutX="50.0" layoutY="209.0" text="Year of Passing Xth*" />
+                                    <Label layoutX="104.0" layoutY="258.0" text="XIIth Board*" />
+                                    <Label layoutX="77.0" layoutY="298.0" text="XIIth Marks (%)*" />
+                                    <Label layoutX="46.0" layoutY="339.0" text="Year of Passing XIIth*" />
+                                    <TextField fx:id="t2text1" layoutX="252.0" layoutY="124.0" prefHeight="31.0" prefWidth="355.0" />
+                                    <TextField fx:id="t2text2" layoutX="252.0" layoutY="162.0" prefHeight="31.0" prefWidth="355.0" />
+                                    <TextField fx:id="t2text3" layoutX="252.0" layoutY="204.0" prefHeight="31.0" prefWidth="357.0" />
+                                    <TextField fx:id="t2text4" layoutX="252.0" layoutY="253.0" prefHeight="31.0" prefWidth="359.0" />
+                                    <TextField fx:id="t2text5" layoutX="252.0" layoutY="293.0" prefHeight="31.0" prefWidth="361.0" />
+                                    <TextField fx:id="t2text6" layoutX="252.0" layoutY="334.0" prefHeight="31.0" prefWidth="365.0" />
+                                    <Label layoutX="132.0" layoutY="464.0" text="Degree*" />
+                                    <Label layoutX="30.0" layoutY="517.0" text="Department/Discipline*" />
+                                    <Label layoutX="73.0" layoutY="568.0" text="Name of College*" />
+                                    <Label layoutX="55.0" layoutY="614.0" text="Name of University*" />
+                                    <Label layoutX="149.0" layoutY="658.0" text="City*" />
+                                    <Label layoutX="145.0" layoutY="699.0" text="State*" />
+                                    <Label layoutX="56.0" layoutY="747.0" text="Year of Graduation*" />
+                                    <Label layoutX="74.0" layoutY="794.0" text="CGPA or MARKS?" />
+                                    <TextField fx:id="t2text7" layoutX="361.0" layoutY="464.0" />
+                                    <TextField fx:id="t2text8" layoutX="361.0" layoutY="512.0" />
+                                    <TextField fx:id="t2text9" layoutX="361.0" layoutY="563.0" />
+                                    <TextField fx:id="t2text10" layoutX="361.0" layoutY="609.0" />
+                                    <TextField fx:id="t2text11" layoutX="361.0" layoutY="653.0" />
+                                    <TextField fx:id="t2text12" layoutX="361.0" layoutY="694.0" />
+                                    <TextField fx:id="t2text13" layoutX="361.0" layoutY="742.0" />
+                                    <RadioButton fx:id="t2rb1" layoutX="353.0" layoutY="794.0" mnemonicParsing="false" text="CGPA" />
+                                    <RadioButton fx:id="t2rb2" layoutX="353.0" layoutY="868.0" mnemonicParsing="false" text="Marks" />
+                                    <TextField fx:id="t2text14" layoutX="376.0" layoutY="828.0" />
+                                    <TextField fx:id="t2text15" layoutX="376.0" layoutY="902.0" />
+                                 </children>
+                              </AnchorPane>
+                              <CheckBox fx:id="t2cb3" layoutX="50.0" layoutY="1081.0" mnemonicParsing="false" text="Other Academic Degrees?" />
+                              <CheckBox fx:id="t2cb4" layoutX="50.0" layoutY="1138.0" mnemonicParsing="false" text="Taken GATE Exam?" />
+                              <CheckBox fx:id="t2cb1" layoutX="50.0" layoutY="968.0" mnemonicParsing="false" text="Are you applying for ECE Phd ?" />
+                              <CheckBox fx:id="t2cb2" layoutX="50.0" layoutY="1019.0" mnemonicParsing="false" text="Have you completed your Post Graduation?" />
+                              <Label layoutX="43.0" layoutY="1186.0" text="Achievements, CV and Statement of Purpose">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="38.0" layoutY="453.0" prefHeight="3.0" prefWidth="923.0" />
+                              <Label layoutX="63.0" layoutY="413.0" text="Graduation Information">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="27.0" layoutY="1239.0" prefHeight="0.0" prefWidth="948.0" />
+                              <Label layoutX="43.0" layoutY="1261.0" text="Achievements (Other information like ranks, medals etc.)" />
+                              <TextField fx:id="t2text16" layoutX="484.0" layoutY="1256.0" prefHeight="75.0" prefWidth="430.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </content>
+          </Tab>
+            <Tab text="Feedback">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="39.0" layoutY="35.0" text="How did you first hear about the IIIT-Delhi PhD program?*">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <RadioButton layoutX="82.0" layoutY="86.0" mnemonicParsing="false" text="Advertisement in the Dainik Jagran" />
+                        <RadioButton layoutX="82.0" layoutY="128.0" mnemonicParsing="false" text="PhD flier" />
+                        <RadioButton layoutX="82.0" layoutY="174.0" mnemonicParsing="false" text="IIIT-Delhi Website" />
+                        <RadioButton layoutX="82.0" layoutY="221.0" mnemonicParsing="false" text="Other Website" />
+                        <RadioButton layoutX="82.0" layoutY="266.0" mnemonicParsing="false" text="Talk/Presentation" />
+                        <RadioButton layoutX="82.0" layoutY="313.0" mnemonicParsing="false" text="College/Teacher/Academic relation" />
+                        <RadioButton layoutX="82.0" layoutY="359.0" mnemonicParsing="false" text="Friend/Family/Personal relation" />
+                        <RadioButton layoutX="82.0" layoutY="395.0" mnemonicParsing="false" text="Other" />
+                        <Label layoutX="39.0" layoutY="452.0" text="Why are you interested in the IIIT-Delhi PhD program?*">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <CheckBox layoutX="82.0" layoutY="501.0" mnemonicParsing="false" text="Faculty profile" />
+                        <CheckBox layoutX="82.0" layoutY="546.0" mnemonicParsing="false" text="Aligned research area/research projects" />
+                        <CheckBox layoutX="82.0" layoutY="592.0" mnemonicParsing="false" text="Collaborative PhD program" />
+                        <CheckBox layoutX="82.0" layoutY="638.0" mnemonicParsing="false" text="No GATE requirement" />
+                        <CheckBox layoutX="82.0" layoutY="678.0" mnemonicParsing="false" text="Attractive stipend and other benefits" />
+                        <CheckBox layoutX="82.0" layoutY="724.0" mnemonicParsing="false" text="Located in Delhi" />
+                        <CheckBox layoutX="82.0" layoutY="766.0" mnemonicParsing="false" text="May not get into IIT" />
+                        <CheckBox layoutX="82.0" layoutY="804.0" mnemonicParsing="false" text="I want to do PhD. IIIT-Delhi is one good option" />
+                        <CheckBox layoutX="82.0" layoutY="839.0" mnemonicParsing="false" text="None of the Above" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Submit">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="59.0" text="Please complete and save all the fields before you click the submit button. Once you have submitted you will not be able to edit any field.">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="t4btn1" layoutX="88.0" layoutY="122.0" mnemonicParsing="false" text="Submit" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
