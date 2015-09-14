@@ -1,1 +1,8 @@
- ml, ml, lmlm, lml, ml, Computer Science, m;l, ml, l, Male, General, Yes, 2015/9/26, Yes, mlm, lml, ml, 10, lml, m, lm, lm, lm, l, mll, lm, lm, l, l, ll, ml, 10, lmlm, 
+apex.varun@hotmai.com, Varun Jain, 2014170, Sector 45, 9871335244, Computer Science, A, B, C, Male, General, No, 2015/9/4, No, Vipin Jain, Indian, Sector 45, 122003, CBSE, 100, 2012, CBSE, 96, 2014, none, none, none, none, none, none, none, 100, NULL, 20150914160652, 
+
+ask, mkm, km, k, mk, Electronics and Communication, mk, mk, mk, Female, ST, No, 2015/9/5, No, lmkm, km, km, k, kk, k, mk, mk, m, km, km, km, km, k, mk, m, k, 100, NULL, 20150914161458, 
+
+ask, mkm, km, k, mk, Electronics and Communication, mk, mk, mk, Female, ST, No, 2015/9/5, No, lmkm, km, km, k, kk, k, mk, mk, m, km, km, km, km, k, mk, m, k, 90, NULL, 20150914161519, 
+
+ask, mkm, km, k, mk, Electronics and Communication, mk, mk, mk, Female, ST, No, 2015/9/5, No, lmkm, km, km, k, kk, k, mk, mk, m, km, km, km, km, k, mk, m, k, 75, NULL, 20150914161536, 
+
