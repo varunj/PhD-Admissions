@@ -10,18 +10,16 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -31,7 +29,6 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
-
 /**
  *
  * @author VarunJain
@@ -159,14 +156,6 @@ public class ApplicantController implements Initializable {
     @FXML
     private TextField t2text15;
     @FXML
-    private CheckBox t2cb3;
-    @FXML
-    private CheckBox t2cb4;
-    @FXML
-    private CheckBox t2cb1;
-    @FXML
-    private CheckBox t2cb2;
-    @FXML
     private TextField t2text16;
     @FXML
     private Button t4btn1;
@@ -219,7 +208,8 @@ public class ApplicantController implements Initializable {
     @FXML
     private ToggleGroup t2g1;
 //</editor-fold>
-       
+     
+    //todo mark red? + tab 2 ui end + checkAll2 + sanity checks + 2*hyperlinks
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         t2drop1.getItems().clear();
@@ -227,16 +217,142 @@ public class ApplicantController implements Initializable {
         t2drop1.getSelectionModel().selectFirst();
         t2text14.setDisable(true);
         t2text15.setDisable(true);
-        
+        // mobile
+        t1text5.textProperty().addListener(new ChangeListener<String>() 
+        {
+            public void changed(ObservableValue<? extends String> observable, String oldValue1, String newValue1) 
+            {
+                try
+                {
+                    int value;
+                    if (newValue1.length() > 10) t1text5.setText(oldValue1); 
+                    if (newValue1.matches("\\d*")) value = Integer.parseInt(newValue1);
+                    else t1text5.setText(oldValue1);            
+                     
+                }
+                catch(Exception e) {} 
+            }
+        });
+        // pincode
+        t1text12.textProperty().addListener(new ChangeListener<String>() 
+        {
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    int value;
+                    if (newValue.matches("\\d*")) value = Integer.parseInt(newValue);
+                    else t1text12.setText(oldValue);            
+                    if (newValue.length() > 6) t1text12.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
+        // marks
+        t2text2.textProperty().addListener(new ChangeListener<String>() 
+        {
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    int value;        
+                    if (Double.parseDouble(newValue) > 100.0) t2text2.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
+        // marks
+        t2text5.textProperty().addListener(new ChangeListener<String>() 
+        {
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    int value;    
+                    if (Double.parseDouble(newValue) > 100.0) t2text5.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
+        // marks
+        t2text15.textProperty().addListener(new ChangeListener<String>() 
+        {
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    int value;          
+                    if (Double.parseDouble(newValue) > 100.0) t2text15.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
+        // year
+        t2text3.textProperty().addListener(new ChangeListener<String>() 
+        {
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    int value;
+                    if (newValue.matches("\\d*")) value = Integer.parseInt(newValue);
+                    else t2text3.setText(oldValue);            
+                    if (Integer.parseInt(newValue) >= Calendar.getInstance().get(Calendar.YEAR)) t2text3.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
+        // year
+        t2text6.textProperty().addListener(new ChangeListener<String>() 
+        {
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    int value;
+                    if (newValue.matches("\\d*")) value = Integer.parseInt(newValue);
+                    else t2text6.setText(oldValue);            
+                    if (Integer.parseInt(newValue) >= Calendar.getInstance().get(Calendar.YEAR)) t2text6.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
+        // year
+        t2text13.textProperty().addListener(new ChangeListener<String>() 
+        {
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    int value;
+                    if (newValue.matches("\\d*")) value = Integer.parseInt(newValue);
+                    else t2text13.setText(oldValue);            
+                    if (Integer.parseInt(newValue) >= Calendar.getInstance().get(Calendar.YEAR)) t2text13.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
+        // cgpa
+        t2text14.textProperty().addListener(new ChangeListener<String>() 
+        {
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    int value;          
+                    if (Integer.parseInt(newValue) > 10) t2text14.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
     }    
-
+    
     @FXML
     private void userSubmitClick(ActionEvent event) {
         int checkAll = 1, checkAll2 = 1;
         String data = "";
         String uid = new SimpleDateFormat("yyyyMMddHHmmss").format(Calendar.getInstance().getTime());
            
-        //todo mark red? + tab 2 ui end + checkAll2 + sanity checks
         if ((!t1text1.getText().equals("") && !t1text2.getText().equals("") && !t1text3.getText().equals("") && !t1text4.getText().equals("") && !t1text5.getText().equals("") && !t1text6.getText().equals("") && !t1text7.getText().equals("") && !t1text8.getText().equals("") && !t1text9.getText().equals("") && !t1text10.getText().equals("") && !t1text11.getText().equals("")) &&(t1rb1.isSelected() || t1rb2.isSelected() || t1rb3.isSelected()) &&(t1rb4.isSelected() || t1rb5.isSelected()) &&(t1rb6.isSelected() || t1rb7.isSelected() || t1rb8.isSelected() || t1rb9.isSelected()) &&(t1rb10.isSelected() || t1rb11.isSelected()) &&(!(t1dp.getValue() == null)) &&(t1rb12.isSelected() || t1rb13.isSelected()) == true )
         {
             t4warning.setVisible(false);
@@ -339,35 +455,7 @@ public class ApplicantController implements Initializable {
     }    
 
     @FXML
-    private void mobileKeyPress(KeyEvent event) {
-        char inpChar = event.getCharacter().toCharArray()[0];
-        if (!((inpChar >= '0' && inpChar <= '9')))
-        {
-            event.consume();
-        }
-        if (t1text5.getText().length() >= 10)
-        {
-            event.consume();
-        }
-    }
-
-    @FXML
-    private void pincodeKeyPress(KeyEvent event) {
-        char inpChar = event.getCharacter().toCharArray()[0];
-        if (!((inpChar >= '0' && inpChar <= '9')))
-        {
-            event.consume();
-        }
-        if (t1text12.getText().length() >= 6)
-        {
-            event.consume();
-        }
-    }
-
-    
-    
-    @FXML
-    private void marksKeyPress1(KeyEvent event) {
+    private void numberDot(KeyEvent event) {
         char inpChar = event.getCharacter().toCharArray()[0];
         if (!((inpChar >= '0' && inpChar <= '9') || inpChar == '.'))
         {
@@ -377,116 +465,6 @@ public class ApplicantController implements Initializable {
         {
             return;
         }
-        if (Double.parseDouble(t2text2.getText()) >= 99.99)
-        {
-            t2text2.setText("");
-        }
     }
-    
-    @FXML
-    private void marksKeyPress2(KeyEvent event) {
-        char inpChar = event.getCharacter().toCharArray()[0];
-        if (!((inpChar >= '0' && inpChar <= '9') || inpChar == '.'))
-        {
-            event.consume();
-        }
-        if (t2text5.getText().equals(""))
-        {
-            return;
-        }
-        if (Double.parseDouble(t2text5.getText()) >= 99.99)
-        {
-            t2text5.setText("");
-        }        
-    }
-    
-    @FXML
-    private void marksKeyPress3(KeyEvent event) {
-        char inpChar = event.getCharacter().toCharArray()[0];
-        if (!((inpChar >= '0' && inpChar <= '9') || inpChar == '.'))
-        {
-            event.consume();
-        }
-        if (t2text15.getText().equals(""))
-        {
-            return;
-        }
-        if (Double.parseDouble(t2text15.getText()) >= 99.99)
-        {
-            t2text15.setText("");
-        }
-    }
-    
-    @FXML
-    private void yearKeyPress1(KeyEvent event) {
-        char inpChar = event.getCharacter().toCharArray()[0];
-        if (!((inpChar >= '0' && inpChar <= '9')))
-        {
-            event.consume();
-        }
-        if (t2text3.getText().equals(""))
-        {
-            return;
-        }
-        if (Integer.parseInt(t2text3.getText()) >= Calendar.getInstance().get(Calendar.YEAR))
-        {
-            t2text3.setText("");
-        }
-    }
-
-   @FXML
-    private void cgpaKeyPress(KeyEvent event) {
-        char inpChar = event.getCharacter().toCharArray()[0];
-        if (!((inpChar >= '0' && inpChar <= '9') || inpChar == '.'))
-        {
-            event.consume();
-        }
-        if (t2text14.getText().equals(""))
-        {
-            return;
-        }
-        if (Double.parseDouble(t2text14.getText()) >= 10.0)
-        {
-            t2text14.setText("");
-        }
-    }
-
-    @FXML
-    private void yearKeyPress2(KeyEvent event) {
-        char inpChar = event.getCharacter().toCharArray()[0];
-        if (!((inpChar >= '0' && inpChar <= '9')))
-        {
-            event.consume();
-        }
-        if (t2text6.getText().equals(""))
-        {
-            return;
-        }
-        if (Integer.parseInt(t2text6.getText()) >= Calendar.getInstance().get(Calendar.YEAR))
-        {
-            t2text6.setText("");
-        }
-    }
-
-    @FXML
-    private void yearKeyPress3(KeyEvent event) {
-        char inpChar = event.getCharacter().toCharArray()[0];
-        if (!((inpChar >= '0' && inpChar <= '9')))
-        {
-            event.consume();
-        }
-        if (t2text13.getText().equals(""))
-        {
-            return;
-        }
-        if (Integer.parseInt(t2text13.getText()) >= Calendar.getInstance().get(Calendar.YEAR))
-        {
-            t2text13.setText("");
-        }
-    }
-
-    
-
     
 }
-

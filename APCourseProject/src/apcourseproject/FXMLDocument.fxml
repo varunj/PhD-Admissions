@@ -7,7 +7,6 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import apcourseproject.custom.*?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" prefHeight="1357.0" prefWidth="917.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apcourseproject.ApplicantController">
    <children>
@@ -38,7 +37,7 @@
                               <TextField fx:id="t1text2" layoutX="175.0" layoutY="92.0" prefHeight="31.0" prefWidth="711.0" />
                               <TextField fx:id="t1text3" layoutX="175.0" layoutY="142.0" prefHeight="31.0" prefWidth="711.0" />
                               <TextField fx:id="t1text4" layoutX="175.0" layoutY="192.0" prefHeight="51.0" prefWidth="711.0" />
-                              <TextField fx:id="t1text5" layoutX="175.0" layoutY="262.0" onKeyTyped="#mobileKeyPress" prefHeight="31.0" prefWidth="711.0" />
+                              <TextField fx:id="t1text5" layoutX="175.0" layoutY="262.0" prefHeight="31.0" prefWidth="711.0" />
                               <RadioButton fx:id="t1rb1" layoutX="175.0" layoutY="312.0" mnemonicParsing="false" prefHeight="31.0" text="Computer Science">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="t1tg1" />
@@ -74,7 +73,7 @@
                               <TextField fx:id="t1text9" layoutX="175.0" layoutY="788.0" prefHeight="31.0" prefWidth="711.0" />
                               <TextField fx:id="t1text10" layoutX="175.0" layoutY="838.0" prefHeight="31.0" prefWidth="711.0" />
                               <TextField fx:id="t1text11" layoutX="175.0" layoutY="888.0" prefHeight="51.0" prefWidth="711.0" />
-                              <TextField fx:id="t1text12" layoutX="175.0" layoutY="958.0" onKeyTyped="#pincodeKeyPress" prefHeight="31.0" prefWidth="711.0" />
+                              <TextField fx:id="t1text12" layoutX="175.0" layoutY="958.0" prefHeight="31.0" prefWidth="711.0" />
                               <Button layoutX="68.0" layoutY="1058.0" mnemonicParsing="false" text="Save" textFill="#2938da" />
                               <Label fx:id="t1lab1" layoutX="117.0" layoutY="42.0" prefHeight="31.0" prefWidth="29.0" text="Email" />
                               <Label fx:id="t1lab2" layoutX="109.0" layoutY="92.0" prefHeight="31.0" text="Name" />
@@ -120,26 +119,26 @@
                                  <Label layoutX="501.0" layoutY="110.0" prefHeight="31.0" text="XIIth Marks (%)*" />
                                  <Label layoutX="470.0" layoutY="150.0" prefHeight="31.0" text="Year of Passing XIIth*" />
                                  <TextField fx:id="t2text1" layoutX="240.0" layoutY="70.0" prefHeight="31.0" prefWidth="180.0" />
-                                 <TextField fx:id="t2text2" layoutX="240.0" layoutY="110.0" onKeyTyped="#marksKeyPress1" prefHeight="31.0" prefWidth="180.0" />
-                                 <TextField fx:id="t2text3" layoutX="240.0" layoutY="149.0" onKeyTyped="#yearKeyPress1" prefHeight="31.0" prefWidth="180.0" />
+                                 <TextField fx:id="t2text2" layoutX="240.0" layoutY="110.0" onKeyTyped="#numberDot" prefHeight="31.0" prefWidth="180.0" />
+                                 <TextField fx:id="t2text3" layoutX="240.0" layoutY="149.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text4" layoutX="676.0" layoutY="70.0" prefHeight="31.0" prefWidth="180.0" />
-                                 <TextField fx:id="t2text5" layoutX="676.0" layoutY="110.0" onKeyTyped="#marksKeyPress2" prefHeight="31.0" prefWidth="180.0" />
-                                 <TextField fx:id="t2text6" layoutX="676.0" layoutY="150.0" onKeyTyped="#yearKeyPress2" prefHeight="31.0" prefWidth="180.0" />
+                                 <TextField fx:id="t2text5" layoutX="676.0" layoutY="110.0" onKeyTyped="#numberDot" prefHeight="31.0" prefWidth="180.0" />
+                                 <TextField fx:id="t2text6" layoutX="676.0" layoutY="150.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text7" layoutX="257.0" layoutY="270.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text8" layoutX="257.0" layoutY="310.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text9" layoutX="257.0" layoutY="350.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text10" layoutX="257.0" layoutY="390.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text11" layoutX="257.0" layoutY="430.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text12" layoutX="257.0" layoutY="470.0" prefHeight="31.0" prefWidth="180.0" />
-                                 <TextField fx:id="t2text13" layoutX="257.0" layoutY="510.0" onKeyTyped="#yearKeyPress3" prefHeight="31.0" prefWidth="180.0" />
+                                 <TextField fx:id="t2text13" layoutX="257.0" layoutY="510.0" prefHeight="31.0" prefWidth="180.0" />
                                  <RadioButton fx:id="t2rb1" layoutX="257.0" layoutY="550.0" mnemonicParsing="false" onAction="#t2cgpaPress" prefHeight="31.0" text="CGPA">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="t2g1" />
                                  </toggleGroup></RadioButton>
                                  <RadioButton fx:id="t2rb2" layoutX="257.0" layoutY="590.0" mnemonicParsing="false" onAction="#t2marksPress" prefHeight="31.0" text="Marks" toggleGroup="$t2g1" />
-                                 <TextField fx:id="t2text14" layoutX="360.0" layoutY="550.0" onKeyTyped="#cgpaKeyPress" prefHeight="31.0" prefWidth="180.0" />
-                                 <TextField fx:id="t2text15" layoutX="360.0" layoutY="590.0" onKeyTyped="#marksKeyPress3" prefHeight="31.0" prefWidth="180.0" />
-                                 <TextField fx:id="t2text16" layoutX="504.0" layoutY="1091.0" prefHeight="75.0" prefWidth="307.0" />
+                                 <TextField fx:id="t2text14" layoutX="360.0" layoutY="550.0" onKeyTyped="#numberDot" prefHeight="31.0" prefWidth="180.0" />
+                                 <TextField fx:id="t2text15" layoutX="360.0" layoutY="590.0" onKeyTyped="#numberDot" prefHeight="31.0" prefWidth="180.0" />
+                                 <TextField fx:id="t2text16" layoutX="257.0" layoutY="710.0" prefHeight="75.0" prefWidth="307.0" />
                                  <Label layoutX="118.0" layoutY="270.0" prefHeight="31.0" text="Degree*" />
                                  <Label layoutX="57.0" layoutY="310.0" prefHeight="31.0" text="Department/Discipline*" />
                                  <Label layoutX="82.0" layoutY="350.0" prefHeight="31.0" text="Name of College*" />
@@ -154,18 +153,54 @@
                                        <Font size="24.0" />
                                     </font>
                                  </Label>
-                                 <CheckBox fx:id="t2cb1" layoutX="90.0" layoutY="869.0" mnemonicParsing="false" text="Are you applying for ECE Phd ?" />
-                                 <CheckBox fx:id="t2cb2" layoutX="50.0" layoutY="907.0" mnemonicParsing="false" text="Have you completed your Post Graduation?" />
-                                 <CheckBox fx:id="t2cb3" layoutX="50.0" layoutY="937.0" mnemonicParsing="false" text="Other Academic Degrees?" />
-                                 <CheckBox fx:id="t2cb4" layoutX="50.0" layoutY="967.0" mnemonicParsing="false" text="Taken GATE Exam?" />
-                                 <Label layoutX="44.0" layoutY="1012.0" text="Achievements, CV and Statement of Purpose">
+                                 <Label layoutX="44.0" layoutY="633.0" text="Achievements, CV and Statement of Purpose">
                                     <font>
                                        <Font size="24.0" />
                                     </font>
                                  </Label>
-                                 <Separator layoutX="43.0" layoutY="1050.0" prefHeight="29.0" prefWidth="948.0" />
-                                 <Label layoutX="151.0" layoutY="1118.0" text="Achievements (Other information like ranks, medals etc.)" />
+                                 <Separator layoutX="14.0" layoutY="659.0" prefHeight="29.0" prefWidth="948.0" />
+                                 <Label layoutX="76.0" layoutY="710.0" prefHeight="74.0" prefWidth="121.0" text="Achievements (Other information like ranks, medals etc.)" wrapText="true" />
                               <ChoiceBox fx:id="t2drop1" layoutX="555.0" layoutY="550.0" prefHeight="31.0" prefWidth="180.0" />
+                              <Label layoutX="76.0" layoutY="800.0" text="CV / Resume" />
+                              <Button layoutX="257.0" layoutY="796.0" mnemonicParsing="false" text="Choose File" />
+                              <Label layoutX="360.0" layoutY="800.0" text="No File Chosen" />
+                              <Label layoutX="76.0" layoutY="836.0" text="Statement of Purpose" />
+                              <Button layoutX="258.0" layoutY="832.0" mnemonicParsing="false" text="Choose File" />
+                              <Label layoutX="360.0" layoutY="836.0" text="No File Chosen" />
+                              <Accordion layoutX="82.0" layoutY="876.0" prefHeight="250.0" prefWidth="237.0">
+                                <panes>
+                                  <TitledPane animated="false" maxHeight="-Infinity" prefHeight="50.0" prefWidth="302.0" text="Are you applying for ECE PhD?">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="300.0">
+                                             <children>
+                                                <Label layoutX="23.0" layoutY="14.0" text="ECE PhD Subject Reference">
+                                                   <font>
+                                                      <Font name="System Bold" size="17.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="14.0" layoutY="57.0" text="Preference 1 *" />
+                                                <ComboBox layoutX="122.0" layoutY="57.0" prefWidth="150.0" />
+                                                <Label layoutX="14.0" layoutY="90.0" text="Preference 2 *" />
+                                                <ComboBox layoutX="122.0" layoutY="90.0" prefWidth="150.0" />
+                                                <Label layoutX="14.0" layoutY="123.0" text="Preference 3 *" />
+                                                <ComboBox layoutX="122.0" layoutY="123.0" prefWidth="150.0" />
+                                                <Label layoutX="14.0" layoutY="156.0" text="Prefernece 4" />
+                                                <ComboBox layoutX="122.0" layoutY="156.0" prefWidth="150.0" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </TitledPane>
+                                </panes>
+                              </Accordion>
+                              <Accordion layoutX="432.0" layoutY="883.0">
+                                <panes>
+                                  <TitledPane animated="false" prefHeight="50.0" prefWidth="302.0" text="Taken the GATE Exam?">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="300.0" />
+                                    </content>
+                                  </TitledPane>
+                                </panes>
+                              </Accordion>
                                 
                               </children>
                            </AnchorPane>
