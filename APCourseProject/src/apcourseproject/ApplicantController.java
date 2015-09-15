@@ -20,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -207,9 +208,66 @@ public class ApplicantController implements Initializable {
     private ScrollPane scroll3;
     @FXML
     private ToggleGroup t2g1;
-//</editor-fold>
-     
-    //todo mark red? + tab 2 ui end + checkAll2 + sanity checks + 2*hyperlinks
+    @FXML
+    private Button t2choose1;
+    @FXML
+    private Button t2choose2;
+    @FXML
+    private ComboBox<?> t2prefer1;
+    @FXML
+    private ComboBox<?> t2prefer2;
+    @FXML
+    private ComboBox<?> t2prefer3;
+    @FXML
+    private ComboBox<?> t2prefer4;
+    @FXML
+    private TextField t2text17;
+    @FXML
+    private TextField t2text18;
+    @FXML
+    private TextField t2text19;
+    @FXML
+    private TextField t2text20;
+    @FXML
+    private TextField t2text21;
+    @FXML
+    private TextField t2text22;
+    @FXML
+    private TextField t2text23;
+    @FXML
+    private TextField t2text24;
+    @FXML
+    private TextField t2text25;
+    @FXML
+    private TextField t2text26;
+    @FXML
+    private TextField t2text27;
+    @FXML
+    private TextField t2text28;
+    @FXML
+    private ComboBox<?> t2statedrop;
+    @FXML
+    private TextField t2text29;
+    @FXML
+    private TextField t2text30;
+    @FXML
+    private TextField t2text31;
+    @FXML
+    private TextField t2text32;
+    @FXML
+    private RadioButton t2rb3;
+    @FXML
+    private TextField t2text33;
+    @FXML
+    private ComboBox<?> t2drop2;
+    @FXML
+    private RadioButton t2rb4;
+    @FXML
+    private TextField t2text34;
+    //</editor-fold>
+    /*todo mark red? + tab 2 ui end + checkAll2 + sanity checks + 2*hyperlinks
+        nationity + state + pref ece + cp
+    */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         t2drop1.getItems().clear();
@@ -454,7 +512,6 @@ public class ApplicantController implements Initializable {
         t2text14.setDisable(true);
     }    
 
-    @FXML
     private void numberDot(KeyEvent event) {
         char inpChar = event.getCharacter().toCharArray()[0];
         if (!((inpChar >= '0' && inpChar <= '9') || inpChar == '.'))

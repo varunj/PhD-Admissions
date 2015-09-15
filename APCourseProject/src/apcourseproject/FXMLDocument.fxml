@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" prefHeight="1357.0" prefWidth="917.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apcourseproject.ApplicantController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" prefHeight="1750.0" prefWidth="917.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apcourseproject.ApplicantController">
    <children>
       <ImageView fitHeight="57.0" fitWidth="917.0" pickOnBounds="true">
          <image>
@@ -25,7 +25,7 @@
             <Font size="19.0" />
          </font>
       </Hyperlink>
-      <TabPane layoutY="57.0" prefHeight="1215.0" prefWidth="917.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0">
+      <TabPane layoutY="57.0" prefHeight="2000.0" prefWidth="917.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0">
         <tabs>
           <Tab fx:id="tab1" text="Personal Information">
                <content>
@@ -101,10 +101,10 @@
           </Tab>
           <Tab text="Education Information">
                <content>
-                  <ScrollPane fx:id="scroll2" hbarPolicy="NEVER" maxHeight="-Infinity" prefHeight="1202.0" prefWidth="917.0">
+                  <ScrollPane fx:id="scroll2" hbarPolicy="NEVER" maxHeight="-Infinity" prefHeight="1700.0" prefWidth="917.0">
                     <content>
 
-                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2000.0" prefWidth="917.0" style="-fx-background-color: white;">
+                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2200.0" prefWidth="917.0" style="-fx-background-color: white;">
                               <children>
                                  <Separator layoutY="47.0" prefHeight="0.0" prefWidth="917.0" />
                                  <Label layoutX="44.0" layoutY="14.0" text="Schooling Information">
@@ -119,10 +119,10 @@
                                  <Label layoutX="501.0" layoutY="110.0" prefHeight="31.0" text="XIIth Marks (%)*" />
                                  <Label layoutX="470.0" layoutY="150.0" prefHeight="31.0" text="Year of Passing XIIth*" />
                                  <TextField fx:id="t2text1" layoutX="240.0" layoutY="70.0" prefHeight="31.0" prefWidth="180.0" />
-                                 <TextField fx:id="t2text2" layoutX="240.0" layoutY="110.0" onKeyTyped="#numberDot" prefHeight="31.0" prefWidth="180.0" />
+                                 <TextField fx:id="t2text2" layoutX="240.0" layoutY="110.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text3" layoutX="240.0" layoutY="149.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text4" layoutX="676.0" layoutY="70.0" prefHeight="31.0" prefWidth="180.0" />
-                                 <TextField fx:id="t2text5" layoutX="676.0" layoutY="110.0" onKeyTyped="#numberDot" prefHeight="31.0" prefWidth="180.0" />
+                                 <TextField fx:id="t2text5" layoutX="676.0" layoutY="110.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text6" layoutX="676.0" layoutY="150.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text7" layoutX="257.0" layoutY="270.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text8" layoutX="257.0" layoutY="310.0" prefHeight="31.0" prefWidth="180.0" />
@@ -136,8 +136,8 @@
                                     <ToggleGroup fx:id="t2g1" />
                                  </toggleGroup></RadioButton>
                                  <RadioButton fx:id="t2rb2" layoutX="257.0" layoutY="590.0" mnemonicParsing="false" onAction="#t2marksPress" prefHeight="31.0" text="Marks" toggleGroup="$t2g1" />
-                                 <TextField fx:id="t2text14" layoutX="360.0" layoutY="550.0" onKeyTyped="#numberDot" prefHeight="31.0" prefWidth="180.0" />
-                                 <TextField fx:id="t2text15" layoutX="360.0" layoutY="590.0" onKeyTyped="#numberDot" prefHeight="31.0" prefWidth="180.0" />
+                                 <TextField fx:id="t2text14" layoutX="360.0" layoutY="550.0" prefHeight="31.0" prefWidth="180.0" />
+                                 <TextField fx:id="t2text15" layoutX="360.0" layoutY="590.0" prefHeight="31.0" prefWidth="180.0" />
                                  <TextField fx:id="t2text16" layoutX="257.0" layoutY="710.0" prefHeight="75.0" prefWidth="307.0" />
                                  <Label layoutX="118.0" layoutY="270.0" prefHeight="31.0" text="Degree*" />
                                  <Label layoutX="57.0" layoutY="310.0" prefHeight="31.0" text="Department/Discipline*" />
@@ -162,10 +162,10 @@
                                  <Label layoutX="76.0" layoutY="710.0" prefHeight="74.0" prefWidth="121.0" text="Achievements (Other information like ranks, medals etc.)" wrapText="true" />
                               <ChoiceBox fx:id="t2drop1" layoutX="555.0" layoutY="550.0" prefHeight="31.0" prefWidth="180.0" />
                               <Label layoutX="76.0" layoutY="800.0" text="CV / Resume" />
-                              <Button layoutX="257.0" layoutY="796.0" mnemonicParsing="false" text="Choose File" />
+                              <Button fx:id="t2choose1" layoutX="257.0" layoutY="796.0" mnemonicParsing="false" text="Choose File" />
                               <Label layoutX="360.0" layoutY="800.0" text="No File Chosen" />
                               <Label layoutX="76.0" layoutY="836.0" text="Statement of Purpose" />
-                              <Button layoutX="258.0" layoutY="832.0" mnemonicParsing="false" text="Choose File" />
+                              <Button fx:id="t2choose2" layoutX="258.0" layoutY="832.0" mnemonicParsing="false" text="Choose File" />
                               <Label layoutX="360.0" layoutY="836.0" text="No File Chosen" />
                               <Accordion layoutX="82.0" layoutY="876.0" prefHeight="250.0" prefWidth="237.0">
                                 <panes>
@@ -179,24 +179,95 @@
                                                    </font>
                                                 </Label>
                                                 <Label layoutX="14.0" layoutY="57.0" text="Preference 1 *" />
-                                                <ComboBox layoutX="122.0" layoutY="57.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="t2prefer1" layoutX="122.0" layoutY="57.0" prefWidth="150.0" />
                                                 <Label layoutX="14.0" layoutY="90.0" text="Preference 2 *" />
-                                                <ComboBox layoutX="122.0" layoutY="90.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="t2prefer2" layoutX="122.0" layoutY="90.0" prefWidth="150.0" />
                                                 <Label layoutX="14.0" layoutY="123.0" text="Preference 3 *" />
-                                                <ComboBox layoutX="122.0" layoutY="123.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="t2prefer3" layoutX="122.0" layoutY="123.0" prefWidth="150.0" />
                                                 <Label layoutX="14.0" layoutY="156.0" text="Prefernece 4" />
-                                                <ComboBox layoutX="122.0" layoutY="156.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="t2prefer4" layoutX="122.0" layoutY="156.0" prefWidth="150.0" />
                                              </children>
                                           </AnchorPane>
                                     </content>
                                   </TitledPane>
                                 </panes>
                               </Accordion>
-                              <Accordion layoutX="432.0" layoutY="883.0">
+                              <Accordion layoutX="450.0" layoutY="875.0" prefHeight="280.0" prefWidth="237.0">
                                 <panes>
                                   <TitledPane animated="false" prefHeight="50.0" prefWidth="302.0" text="Taken the GATE Exam?">
                                     <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="300.0" />
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="300.0">
+                                             <children>
+                                                <Label layoutX="31.0" layoutY="14.0" text="Gate">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="21.0" layoutY="46.0" text="Area" />
+                                                <TextField fx:id="t2text17" layoutX="99.0" layoutY="41.0" prefHeight="31.0" prefWidth="191.0" />
+                                                <Label layoutX="21.0" layoutY="67.0" prefHeight="57.0" prefWidth="77.0" text="Year of Graduation" wrapText="true" />
+                                                <TextField fx:id="t2text18" layoutX="101.0" layoutY="80.0" prefHeight="31.0" prefWidth="189.0" />
+                                                <Label layoutX="21.0" layoutY="120.0" text="Marks (100)" />
+                                                <TextField fx:id="t2text19" layoutX="98.0" layoutY="123.0" prefHeight="31.0" prefWidth="192.0" />
+                                                <Label layoutX="21.0" layoutY="160.0" text="Score" />
+                                                <TextField fx:id="t2text20" layoutX="101.0" layoutY="164.0" />
+                                                <Label layoutX="21.0" layoutY="200.0" text="Rank" />
+                                                <TextField fx:id="t2text21" layoutX="101.0" layoutY="205.0" />
+                                             </children></AnchorPane>
+                                    </content>
+                                  </TitledPane>
+                                </panes>
+                              </Accordion>
+                              <Accordion layoutX="82.0" layoutY="1192.0" prefHeight="297.0" prefWidth="291.0">
+                                <panes>
+                                  <TitledPane animated="false" text="Other Academic Degrees">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="300.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="27.0" text="Exam Name" />
+                                                <TextField fx:id="t2text22" layoutX="99.0" layoutY="22.0" />
+                                                <Label layoutX="14.0" layoutY="64.0" text="Subject" />
+                                                <TextField fx:id="t2text23" layoutX="99.0" layoutY="59.0" />
+                                                <Label layoutX="14.0" layoutY="101.0" text="Year" />
+                                                <TextField fx:id="t2text24" layoutX="99.0" layoutY="96.0" />
+                                                <Label layoutX="14.0" layoutY="139.0" text="Score" />
+                                                <TextField fx:id="t2text25" layoutX="99.0" layoutY="134.0" />
+                                                <Label layoutX="14.0" layoutY="176.0" text="Rank" />
+                                                <TextField fx:id="t2text26" layoutX="99.0" layoutY="170.0" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </TitledPane>
+                                </panes>
+                              </Accordion>
+                              <Accordion layoutX="450.0" layoutY="1192.0">
+                                <panes>
+                                  <TitledPane animated="false" text="Post - Graduation Information">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="350.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="21.0" text="Name of College" />
+                                                <TextField fx:id="t2text27" layoutX="137.0" layoutY="16.0" />
+                                                <Label layoutX="14.0" layoutY="58.0" text="City" />
+                                                <TextField fx:id="t2text28" layoutX="137.0" layoutY="53.0" />
+                                                <Label layoutX="14.0" layoutY="91.0" text="State" />
+                                                <ComboBox fx:id="t2statedrop" layoutX="137.0" layoutY="97.0" prefHeight="31.0" prefWidth="187.0" />
+                                                <Label layoutX="14.0" layoutY="128.0" prefHeight="57.0" prefWidth="95.0" text="Department / Discipline" wrapText="true" />
+                                                <TextField fx:id="t2text29" layoutX="137.0" layoutY="141.0" />
+                                                <Label layoutX="14.0" layoutY="193.0" text="Degree" />
+                                                <TextField fx:id="t2text30" layoutX="137.0" layoutY="178.0" />
+                                                <Label layoutX="14.0" layoutY="222.0" text="Thesis Title" />
+                                                <TextField fx:id="t2text31" layoutX="137.0" layoutY="217.0" />
+                                                <Label layoutX="14.0" layoutY="266.0" text="Year" />
+                                                <TextField fx:id="t2text32" layoutX="137.0" layoutY="261.0" />
+                                                <Label layoutX="14.0" layoutY="303.0" text="CGPA / MARKS" />
+                                                <RadioButton fx:id="t2rb3" layoutX="137.0" layoutY="303.0" mnemonicParsing="false" text="CGPA" />
+                                                <TextField fx:id="t2text33" layoutX="140.0" layoutY="324.0" prefHeight="31.0" prefWidth="137.0" />
+                                                <ComboBox fx:id="t2drop2" layoutX="283.0" layoutY="324.0" prefHeight="31.0" prefWidth="59.0" />
+                                                <RadioButton fx:id="t2rb4" layoutX="137.0" layoutY="361.0" mnemonicParsing="false" text="Marks (%)" />
+                                                <TextField fx:id="t2text34" layoutX="137.0" layoutY="382.0" />
+                                             </children>
+                                          </AnchorPane>
                                     </content>
                                   </TitledPane>
                                 </panes>
