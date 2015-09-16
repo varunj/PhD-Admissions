@@ -19,8 +19,8 @@ public class APCourseProject extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("AdminFXML.fxml"));
-//        Parent root = FXMLLoader.load(getClass().getResource("TableFXML.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("AdminFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("tableFXML.fxml"));
 //        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
         Scene scene = new Scene(root);

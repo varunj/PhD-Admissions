@@ -5,11 +5,8 @@
  */
 package apcourseproject;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,45 +23,42 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 public class TableFXMLController implements Initializable {
     @FXML
-    private TableView<?> table1;
+    private TableView<addRectoTable> table1;
     @FXML
-    private TableColumn<?, ?> table1col1;
+    private TableColumn<addRectoTable, String> table1col1;
     @FXML
-    private TableColumn<?, ?> table1col2;
+    private TableColumn<addRectoTable, String> table1col2;
     @FXML
-    private TableColumn<?, ?> table1col3;
+    private TableColumn<addRectoTable, String> table1col3;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        BufferedReader fileStream = null;
-        String[] records = null;
+        ArrayList<String[]> records = new ArrayList<>();
         String eachRec = "";
-        int i = 0;
+        String eachRec1 = "";
         try
         {
-            fileStream = new BufferedReader(new FileReader("./src/applicantDetails.txt"));
-            while ((eachRec = fileStream.readLine()) != null)
+            eachRec = "101, VarunJain, Link, ";
+            eachRec1 = "201, ayush, Yo, ";
+            records.add(eachRec.split(", "));
+            records.add(eachRec1.split(", "));
+        
+            ObservableList<addRectoTable> data = FXCollections.observableArrayList();
+            for(int j=0;j<records.size();j++)
             {
-                if (!eachRec.equals(""))
-                {
-                    
-                }
-                
+                String[] format=records.get(j);
+                data.add(new addRectoTable(format[0], format[1], format[2]));
             }
+            table1.setEditable(true);
+            table1col1.setCellValueFactory(new PropertyValueFactory<>("enroll"));
+            table1col2.setCellValueFactory(new PropertyValueFactory<>("name"));
+            table1col3.setCellValueFactory(new PropertyValueFactory<>("link"));
+            table1.setItems(data);
         }
         catch (Exception e) {}
-        
-        ObservableList<String[]> data = FXCollections.observableArrayList();
-        table1.setEditable(true);
-        table1col1.setCellValueFactory(new PropertyValueFactory<>("category"));
-        table1col2.setCellValueFactory(new PropertyValueFactory<>("amount"));
-        table1col3.setCellValueFactory(new PropertyValueFactory<>("dt"));
-//        table1.setItems(data);
-        
     }    
     
 }

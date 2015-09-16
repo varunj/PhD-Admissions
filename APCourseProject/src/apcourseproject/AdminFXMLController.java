@@ -264,7 +264,7 @@ public class AdminFXMLController implements Initializable {
 
     @FXML
     private void submitClick(ActionEvent event) {
-        
+        // tab 1 work------------------------------------------------------------------------------------------
         // email
         if (!at1text1.getText().equals(""))
         {
@@ -324,7 +324,7 @@ public class AdminFXMLController implements Initializable {
                 }
             }
         }
-        // phy tutahua
+        // physically tutahua
         if ((at1rb3.isSelected() == true) || (at1rb4.isSelected() == true))
         {
             for (int i = 0; i < records.size(); i++)
@@ -358,8 +358,257 @@ public class AdminFXMLController implements Initializable {
                 }
             }
         }
+        // tab 2 work------------------------------------------------------------------------------------------
+        // ayush ko nahi likhne denge
+        // phd stream
+        if (at2drop1.getValue() != null)
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (!(records.get(i)[5].equals(at2drop1.getValue())))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // grad deg
+        if (at2drop2.getValue() != null)
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (!(records.get(i)[24].equals(at2drop2.getValue())))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // grad deg
+        if (at2drop2.getValue() != null)
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (!(records.get(i)[24].equals(at2drop2.getValue())))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // post grad deg
+        if (at2drop3.getValue() != null)
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (!(records.get(i)[53].equals(at2drop3.getValue())))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // x board
+        if (at2drop4.getValue() != null)
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (!(records.get(i)[18].equals(at2drop4.getValue())))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // xii board
+        if (at2drop5.getValue() != null)
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (!(records.get(i)[21].equals(at2drop5.getValue())))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // grad dept
+        if (a2drop6.getValue() != null)
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (!(records.get(i)[25].equals(a2drop6.getValue())))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // post grad dept
+        if (a2drop7.getValue() != null)
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (!(records.get(i)[52].equals(a2drop7.getValue())))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // grad state
+        if (at2drop8.getValue() != null)
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (!(records.get(i)[29].equals(at2drop8.getValue())))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // post grad state
+        if (at2drop9.getValue() != null)
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (!(records.get(i)[51].equals(at2drop9.getValue())))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // University of Graduation
+        if (!a2text1.getText().equals(""))
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (!(records.get(i)[26].equals(a2text1.getText())))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // post grad univ
+        if (!at2text2.getText().equals(""))
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (!(records.get(i)[49].equals(at2text2.getText())))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // x percent
+        if ((at2r1.isSelected() == true) || (at2r2.isSelected() == true) || (at2r3.isSelected() == true))
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (at2r1.isSelected() == true && (Double.parseDouble(records.get(i)[19]) < Double.parseDouble(at2text3.getText())) )
+                {
+                    records.get(i)[58] = "0";
+                }
+                if (at2r2.isSelected() == true && (Double.parseDouble(records.get(i)[19]) > Double.parseDouble(at2text3.getText())) )
+                {
+                    records.get(i)[58] = "0";
+                }
+                if (at2r3.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[19]), Double.parseDouble(at2text3.getText()))) != 0 ))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // xii percent
+        if ((at2r4.isSelected() == true) || (at2r5.isSelected() == true) || (at2r6.isSelected() == true))
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (at2r4.isSelected() == true && (Double.parseDouble(records.get(i)[22]) < Double.parseDouble(at2text4.getText())) )
+                {
+                    records.get(i)[58] = "0";
+                }
+                if (at2r5.isSelected() == true && (Double.parseDouble(records.get(i)[22]) > Double.parseDouble(at2text4.getText())) )
+                {
+                    records.get(i)[58] = "0";
+                }
+                if (at2r6.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[22]), Double.parseDouble(at2text4.getText()))) != 0 ))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // grad percent
+        if ((at2r7.isSelected() == true) || (at2r8.isSelected() == true) || (at2r9.isSelected() == true))
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (at2r7.isSelected() == true && (Double.parseDouble(records.get(i)[31]) < Double.parseDouble(at2text5.getText())) )
+                {
+                    records.get(i)[58] = "0";
+                }
+                if (at2r8.isSelected() == true && (Double.parseDouble(records.get(i)[31]) > Double.parseDouble(at2text5.getText())) )
+                {
+                    records.get(i)[58] = "0";
+                }
+                if (at2r9.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[31]), Double.parseDouble(at2text5.getText()))) != 0 ))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // post grad percent
+        if ((at2r10.isSelected() == true) || (at2r11.isSelected() == true) || (at2r12.isSelected() == true))
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (at2r10.isSelected() == true && (Double.parseDouble(records.get(i)[56]) < Double.parseDouble(at2text6.getText())) )
+                {
+                    records.get(i)[58] = "0";
+                }
+                if (at2r11.isSelected() == true && (Double.parseDouble(records.get(i)[56]) > Double.parseDouble(at2text6.getText())) )
+                {
+                    records.get(i)[58] = "0";
+                }
+                if (at2r12.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[56]), Double.parseDouble(at2text6.getText()))) != 0 ))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
+        // gate percent
+        if ((at2r13.isSelected() == true) || (at2r14.isSelected() == true) || (at2r15.isSelected() == true))
+        {
+            for (int i = 0; i < records.size(); i++)
+            {
+                if (at2r13.isSelected() == true && (Double.parseDouble(records.get(i)[42]) < Double.parseDouble(at2text7.getText())) )
+                {
+                    records.get(i)[58] = "0";
+                }
+                if (at2r14.isSelected() == true && (Double.parseDouble(records.get(i)[42]) > Double.parseDouble(at2text7.getText())) )
+                {
+                    records.get(i)[58] = "0";
+                }
+                if (at2r15.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[42]), Double.parseDouble(at2text7.getText()))) != 0 ))
+                {
+                    records.get(i)[58] = "0";
+                }
+            }
+        }
 
-
+        // tab 3 work------------------------------------------------------------------------------------------
+        // date
+        for (int i = 0; i < records.size(); i++)
+        {
+            String toProcess = records.get(i)[57];
+            String newDate = toProcess.substring(0, 4) + "-" + toProcess.substring(4, 6) + "-" + toProcess.substring(6, 8);
+            LocalDate date = LocalDate.parse(newDate);
+            if ((date.isBefore(at3dp1.getValue())) || (date.isAfter(at3dp2.getValue())) )
+            {
+                records.get(i)[58] = "0";
+            }
+        }
+        
+        for (int i = 0; i < records.size(); i++)
+        {
+            for (int ii = 0; ii < records.get(i).length; ii++)
+            {
+                System.out.print(records.get(i)[ii] + "   ");
+            }
+            System.out.println("");
+        }
 
     }
 
