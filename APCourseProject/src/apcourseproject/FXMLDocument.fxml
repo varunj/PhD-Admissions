@@ -15,12 +15,12 @@
             <Image url="@../header.jpg" />
          </image>
       </ImageView>
-      <Hyperlink fx:id="linkcontact" layoutX="774.0" layoutY="10.0" text="Contact" textFill="WHITE">
+      <Hyperlink fx:id="linkcontact" layoutX="774.0" layoutY="10.0" onAction="#hyp2" text="Contact" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
       </Hyperlink>
-      <Hyperlink fx:id="linkfaq" layoutX="694.0" layoutY="10.0" text="FAQ" textFill="#fcfcfc">
+      <Hyperlink fx:id="linkfaq" layoutX="694.0" layoutY="10.0" onAction="#hyp1" text="FAQ" textFill="#fcfcfc">
          <font>
             <Font size="19.0" />
          </font>

@@ -1,0 +1,361 @@
+#include <sys/wait.h>
+#include <ctype.h>
+#include <sys/types.h>
+#include <signal.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <stdio.h>
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <signal.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <termios.h>
+// #include <util.h>
+
+static char* args[512];
+static char eachLine[1024];
+static int n = 0;
+char* currentDirectory;
+int nosOfCmds = 0;
+char arrForHistory[100][256];
+int badFlag = 0;
+
+void inpout(char * args[], char* inputFile, char* outputFile, int option);
+int inpCmdSplitter(char * args[]);
+void ioLaunch(char **args, int background);
+
+static int funcRun(char* commands, int input, int begin, int end)
+{
+	pid_t procID;
+	// commands like commands with pipe inbetween a | b -> a \n b
+
+	// remove spaces at start
+	while (isspace(* commands))
+	{
+		commands = ++commands;
+	}
+	
+	char* next = strchr(commands, ' ');
+
+	int i = 0;
+ 
+	while (next != NULL) 
+	{
+		next[0] = '\0';
+		args[i] = commands;	
+		++i;
+
+		char* nextTemp = next + 1;
+		while (isspace(* nextTemp))
+		{
+			++nextTemp;
+		}
+		commands = nextTemp;
+		
+		next = strchr(commands, ' ');
+	}
+
+
+	// history work
+	if (strcmp(commands, "history\n") == 0)
+	{
+		badFlag = 1;
+		int i;
+		for (i = 0; i < nosOfCmds; i++)
+		{
+			printf("%d. %s", i+1, arrForHistory[i]);
+		}
+
+	}
+
+	// help work
+	if (strcmp(commands, "help\n") == 0)
+	{
+		badFlag = 1;
+		printf("cd  |  help  |  kill  |  handles Ctrl+C  |  ls  |  piping  |  PWD  |  clear  |  handles Enter  |  history  |  redirects stdin and stdout  |  handles erroneous commands\n");
+	}
+ 	
+
+	if (commands[0] != '\0') 
+	{
+		args[i] = commands;
+		next = strchr(commands, '\n');
+		next[0] = '\0';
+		++i; 
+	}
+ 
+	args[i] = NULL;
+
+	if (args[0] != NULL) 
+	{
+		n += 1;
+		
+		// cd work 
+		// for cd a | cd b args[0]: cd cd args[1]: a b
+		if (strcmp(args[0], "cd") == 0)
+		{
+			badFlag = 1;
+			chdir(args[1]);
+		}
+
+		// pipe work
+		int pipeThings[2];
+	 	pipe(pipeThings);	
+		procID = fork();
+	 
+		if (procID == 0) 
+		{	
+			if (begin == 0 && end == 0 && input != 0) 
+			{	
+				dup2(input, STDIN_FILENO);
+				dup2(pipeThings[1], STDOUT_FILENO);
+			}
+			else if (begin == 1 && end == 0 && input == 0) 
+			{
+				dup2(pipeThings[1], STDOUT_FILENO);
+			}
+			
+			else 
+			{
+				dup2(input, STDIN_FILENO);
+			}
+
+			// fail forking
+			if (execvp( args[0], args) == -1)
+			{
+				if (badFlag == 0)
+				{
+					printf("Enter Valid Command\n");
+				}
+				_exit(EXIT_FAILURE);
+			}
+		}
+	 	
+		if (input != 0)
+		{
+			close(input);
+		}
+
+		close(pipeThings[1]);
+
+		// terminating command
+		if (end == 1)
+		{
+			close(pipeThings[0]);
+		}
+
+		return pipeThings[0];
+	}
+	return 0;
+}	
+
+
+// detect ctrl+c
+void ctrlHandle(int inp)
+{
+	char character;
+	signal(character, SIG_IGN);
+	printf("Haha it doesn't exit even on ctrl+C. Use kill 0\nvarun:/home/varun/Desktop@ HShell$ \n");
+	return;
+}
+
+
+int main()
+{
+	
+	printf("Hell Shell by VarunJ\n");
+    char cwd[1024];
+    char* currentDirectory = (char*) malloc(1024* sizeof(char));
+    char * tokens[256];
+    int numTokens;
+	while (1) 
+	{
+		badFlag = 0;
+		// detect ctrl+c
+		signal(SIGINT, ctrlHandle);
+
+        printf("%s:%s@ HShell$ ", getenv("USER"), getcwd(cwd, sizeof(cwd)));
+
+ 		fflush(NULL);
+
+		if (fgets(eachLine, 1024, stdin) == NULL) 
+		{
+			return 0;
+		}
+
+		char* eachCmd = eachLine;
+		char* cmdio = eachLine;
+		int result = 0;
+		int start = 1;
+
+ 		// history work
+		char* toComparearrForHistory = "\n";
+ 		if (nosOfCmds >= 100)
+ 		{
+ 			nosOfCmds = 0;
+ 		}
+ 		if (strcmp(eachLine, toComparearrForHistory) != 0)
+ 		{
+ 			strcpy(arrForHistory[nosOfCmds], eachLine);
+ 			nosOfCmds++;
+ 		}
+
+
+ 		// //-------------------------------------------------
+ 		// if (strchr(cmdio, '<') != NULL || strchr(cmdio, '>') != NULL)
+ 		// {
+ 		// 	if((tokens[0] = strtok(eachLine," \n\t")) == NULL) continue;
+	 	// 	numTokens = 1;
+	 	// 	while((tokens[numTokens] = strtok(NULL, " \n\t")) != NULL) numTokens++;
+			// inpCmdSplitter(tokens);
+ 		// }
+ 		
+ 		// continue;
+ 		//-------------------------------------------------
+
+
+
+ 		// find all |
+ 		char* nextPipe = strchr(eachCmd, '|');	
+		while (nextPipe != NULL) 
+		{
+			*nextPipe = '\0';
+			result = funcRun(eachCmd, result, start, 0);
+			eachCmd = nextPipe + 1;
+			nextPipe = strchr(eachCmd, '|');
+			start = 0;
+		}
+		result = funcRun(eachCmd, result, start, 1);
+
+		int i;
+		for (i = 0; i < n; ++i) 
+		{
+			wait(NULL);
+		}
+		
+		n = 0;
+	}
+	return 0;
+}
+
+
+
+// void inpout(char * args[], char* inputFile, char* outputFile, int option)
+// { 
+// 	pid_t pid;
+// 	pid = fork();
+// 	int err = -1;
+	
+// 	int ioFileDesc;
+	
+// 	if(pid == -1)
+// 	{
+// 		return;
+// 	}
+// 	if(pid==0){
+// 		if (option == 0)
+// 		{
+// 			ioFileDesc = open(outputFile, O_CREAT | O_TRUNC | O_WRONLY, 0600); 
+// 			dup2(ioFileDesc, STDOUT_FILENO); 
+// 			close(ioFileDesc);
+// 		}
+// 		else if (option == 1)
+// 		{
+// 			ioFileDesc = open(inputFile, O_RDONLY, 0600);  
+// 			dup2(ioFileDesc, STDIN_FILENO);
+// 			close(ioFileDesc);
+// 			ioFileDesc = open(outputFile, O_CREAT | O_TRUNC | O_WRONLY, 0600);
+// 			dup2(ioFileDesc, STDOUT_FILENO);
+// 			close(ioFileDesc);		 
+// 		}		
+// 		if (execvp(args[0],args)==err){
+// 			printf("err");
+// 			kill(getpid(),SIGTERM);
+// 		}		 
+// 	}
+// 	waitpid(pid,NULL,0);
+// }
+
+
+// int inpCmdSplitter(char * args[]){
+// 	int i = 0;
+// 	int j = 0;
+	
+// 	int fileDescriptor;
+// 	int standardOut;
+	
+// 	int aux;
+// 	int background = 0;
+	
+// 	char *args_aux[256];
+
+// 	while ( args[j] != NULL)
+// 	{
+// 		if ( (strcmp(args[j],">") == 0) || (strcmp(args[j],"<") == 0) || (strcmp(args[j],"&") == 0))
+// 		{
+// 			break;
+// 		}
+// 		args_aux[j] = args[j];
+// 		j++;
+// 	}
+
+// 	while (args[i] != NULL && background == 0)
+// 	{
+// 		if (strcmp(args[i],"<") == 0)
+// 		{
+// 			aux = i+1;
+// 			if (args[aux] == NULL || args[aux+1] == NULL || args[aux+2] == NULL )
+// 			{
+// 				return -1;
+// 			}
+// 			else
+// 			{
+// 				if (strcmp(args[aux+1],">") != 0){
+// 					printf("Usage: Expected '>' and found %s\n",args[aux+1]);
+// 					return -2;
+// 				}
+// 			}
+// 			inpout(args_aux,args[i+1],args[i+3],1);
+// 			return 1;
+// 		}
+
+// 		else if (strcmp(args[i],">") == 0)
+// 		{
+// 			if (args[i+1] == NULL)
+// 			{
+// 				return -1;
+// 			}
+// 			inpout(args_aux,NULL,args[i+1],0);
+// 			return 1;
+// 		}
+// 		i++;
+// 	}
+
+// 	ioLaunch(args_aux,background);
+
+// 	return 1;
+// }
+
+// void ioLaunch(char **args, int background)
+// {	 
+// 	 int err = -1;
+// 	 pid_t pid;
+// 	 if((pid=fork())==-1)
+// 	 {
+// 		 return;
+// 	 }
+// 	if(pid==0)
+// 	{		
+// 		if (execvp(args[0],args)==err)
+// 		{
+// 			kill(getpid(),SIGTERM);
+// 		}
+// 	 }
+// }

@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="767.0" prefWidth="780.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="apcourseproject.AdminFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apcourseproject.AdminFXMLController">
     
 <children>
       <Label layoutX="257.0" layoutY="6.0" prefHeight="43.0" prefWidth="165.0" text="Filter Entries">
@@ -15,7 +15,7 @@
             <Font size="29.0" />
          </font>
       </Label>
-      <TabPane layoutX="7.0" layoutY="57.0" prefHeight="708.0" prefWidth="773.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="7.0" layoutY="57.0" prefHeight="600.0" prefWidth="773.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Personal Information">
             <content>
@@ -26,19 +26,28 @@
                         <Label layoutX="106.0" layoutY="112.0" text="Name" />
                         <TextField fx:id="at1text2" layoutX="294.0" layoutY="107.0" prefHeight="31.0" prefWidth="351.0" />
                         <Label layoutX="106.0" layoutY="162.0" text="Enrollment Number" />
-                        <TextField fx:id="at1text3" layoutX="295.0" layoutY="157.0" prefHeight="31.0" prefWidth="351.0" />
+                        <TextField fx:id="at1text3" layoutX="294.0" layoutY="157.0" prefHeight="31.0" prefWidth="351.0" />
                         <Label layoutX="106.0" layoutY="214.0" text="Category" />
                         <ComboBox fx:id="at1drop1" layoutX="294.0" layoutY="220.0" prefHeight="31.0" prefWidth="206.0" />
                         <Label layoutX="106.0" layoutY="290.0" text="Gender" />
-                        <RadioButton fx:id="at1rb1" layoutX="294.0" layoutY="290.0" mnemonicParsing="false" text="Male" />
-                        <RadioButton fx:id="at1rb2" layoutX="414.0" layoutY="290.0" mnemonicParsing="false" text="Female" />
+                        <RadioButton fx:id="at1rb1" layoutX="294.0" layoutY="290.0" mnemonicParsing="false" text="Male">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="at1grp1" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="at1rb2" layoutX="414.0" layoutY="290.0" mnemonicParsing="false" text="Female" toggleGroup="$at1grp1" />
                         <Label layoutX="104.0" layoutY="342.0" text="Physically Disabled" />
-                        <RadioButton fx:id="at1rb3" layoutX="293.0" layoutY="342.0" mnemonicParsing="false" text="Yes" />
-                        <RadioButton fx:id="at1rb4" layoutX="414.0" layoutY="342.0" mnemonicParsing="false" text="No" />
+                        <RadioButton fx:id="at1rb3" layoutX="293.0" layoutY="342.0" mnemonicParsing="false" text="Yes">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="at1grp2" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="at1rb4" layoutX="414.0" layoutY="342.0" mnemonicParsing="false" text="No" toggleGroup="$at1grp2" />
                         <Label layoutX="104.0" layoutY="406.0" text="Date of Birth" />
-                        <RadioButton fx:id="at1rb5" layoutX="293.0" layoutY="406.0" mnemonicParsing="false" text="Before" />
-                        <RadioButton fx:id="at1rb6" layoutX="416.0" layoutY="406.0" mnemonicParsing="false" text="On" />
-                        <RadioButton fx:id="at1rb7" layoutX="536.0" layoutY="406.0" mnemonicParsing="false" text="After" />
+                        <RadioButton fx:id="at1rb5" layoutX="293.0" layoutY="406.0" mnemonicParsing="false" text="Before">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="at1grp3" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="at1rb6" layoutX="416.0" layoutY="406.0" mnemonicParsing="false" text="On" toggleGroup="$at1grp3" />
+                        <RadioButton fx:id="at1rb7" layoutX="536.0" layoutY="406.0" mnemonicParsing="false" text="After" toggleGroup="$at1grp3" />
                         <DatePicker fx:id="at1date" layoutX="295.0" layoutY="470.0" />
                      </children>
                   </AnchorPane>
@@ -51,33 +60,33 @@
                         <Label layoutX="115.0" layoutY="35.0" text="PhD stream" />
                         <ComboBox fx:id="at2drop1" layoutX="348.0" layoutY="30.0" prefHeight="31.0" prefWidth="200.0" />
                         <Label layoutX="115.0" layoutY="69.0" text="Graduation Degree" />
-                        <ComboBox fx:id="at2drop2" layoutX="348.0" layoutY="64.0" prefHeight="31.0" prefWidth="200.0" />
+                        <ComboBox fx:id="at2drop2" layoutX="348.0" layoutY="67.0" prefHeight="31.0" prefWidth="200.0" />
                         <Label layoutX="115.0" layoutY="105.0" text="Post Graduation Degree" />
                         <ComboBox fx:id="at2drop3" layoutX="348.0" layoutY="100.0" prefHeight="31.0" prefWidth="200.0" />
                         <Label layoutX="115.0" layoutY="142.0" text="Class X Board" />
                         <ComboBox fx:id="at2drop4" layoutX="348.0" layoutY="137.0" prefHeight="31.0" prefWidth="200.0" />
                         <Label layoutX="115.0" layoutY="179.0" text="Class XII Board" />
-                        <ComboBox fx:id="at2drop1" layoutX="348.0" layoutY="174.0" prefHeight="31.0" prefWidth="200.0" />
+                        <ComboBox fx:id="at2drop5" layoutX="348.0" layoutY="174.0" prefHeight="31.0" prefWidth="200.0" />
                         <Label layoutX="115.0" layoutY="217.0" text="Department (Graduation)" />
                         <ComboBox fx:id="a2drop6" layoutX="348.0" layoutY="212.0" prefHeight="31.0" prefWidth="200.0" />
                         <Label layoutX="115.0" layoutY="255.0" text="Department(Post Graduation)" />
                         <ComboBox fx:id="a2drop7" layoutX="348.0" layoutY="250.0" prefHeight="31.0" prefWidth="200.0" />
                         <Label layoutX="115.0" layoutY="290.0" text="University (Graduation)" />
-                        <TextField fx:id="a2" layoutX="348.0" layoutY="285.0" prefWidth="200.0" />
+                        <TextField fx:id="a2text1" layoutX="348.0" layoutY="285.0" prefWidth="200.0" />
                         <Label layoutX="115.0" layoutY="324.0" text="University (Post Graduation)" />
-                        <TextField layoutX="348.0" layoutY="319.0" prefHeight="0.0" prefWidth="200.0" />
+                        <TextField fx:id="at2text2" layoutX="348.0" layoutY="319.0" prefHeight="0.0" prefWidth="200.0" />
                         <Label layoutX="115.0" layoutY="359.0" text="State (Graduation)" />
-                        <ComboBox layoutX="348.0" layoutY="354.0" prefHeight="31.0" prefWidth="200.0" />
+                        <ComboBox fx:id="at2drop8" layoutX="348.0" layoutY="354.0" prefHeight="31.0" prefWidth="200.0" />
                         <Label layoutX="115.0" layoutY="396.0" text="State (Post Graduation)" />
-                        <ComboBox layoutX="348.0" layoutY="391.0" prefHeight="31.0" prefWidth="200.0" />
+                        <ComboBox fx:id="at2drop9" layoutX="348.0" layoutY="391.0" prefHeight="31.0" prefWidth="200.0" />
                         <Label layoutX="115.0" layoutY="434.0" text="Class X percentage" />
-                        <TextField layoutX="666.0" layoutY="429.0" maxHeight="-Infinity" prefHeight="20.0" prefWidth="99.0" promptText="Percent" />
+                        <TextField fx:id="at2text3" layoutX="666.0" layoutY="429.0" maxHeight="-Infinity" prefHeight="20.0" prefWidth="99.0" promptText="Percent" />
                         <Label layoutX="115.0" layoutY="460.0" text="Class XII Percentage" />
-                        <TextField layoutX="666.0" layoutY="455.0" prefHeight="31.0" prefWidth="99.0" promptText="Percent" />
+                        <TextField fx:id="at2text4" layoutX="666.0" layoutY="455.0" prefHeight="31.0" prefWidth="99.0" promptText="Percent" />
                         <Label layoutX="115.0" layoutY="486.0" text="Graduation Marks Percentage" />
-                        <TextField layoutX="666.0" layoutY="481.0" prefHeight="31.0" prefWidth="99.0" promptText="Percent" />
+                        <TextField fx:id="at2text5" layoutX="666.0" layoutY="481.0" prefHeight="31.0" prefWidth="99.0" promptText="Percent" />
                         <Label layoutX="115.0" layoutY="512.0" text="Post Graduation Marks Percentage" />
-                        <TextField layoutX="666.0" layoutY="507.0" prefHeight="31.0" prefWidth="99.0" promptText="Percent" />
+                        <TextField fx:id="at2text6" layoutX="666.0" layoutY="507.0" prefHeight="31.0" prefWidth="99.0" promptText="Percent" />
                         <Label layoutX="115.0" layoutY="538.0" text="GATE Score" />
 
 
@@ -86,41 +95,41 @@
                         <toggleGroup>
                         <ToggleGroup fx:id="t2grp1" />
                         </toggleGroup></RadioButton>
-                        <RadioButton fx:id="at2r2" layoutX="454.0" layoutY="434.0" mnemonicParsing="false" text="Less Than" toggleGroup="$t2grp1"/>
-                        <RadioButton fx:id="at2r3" layoutX="560.0" layoutY="434.0" mnemonicParsing="false" text="Equal To" toggleGroup="$t2grp1"/>
+                        <RadioButton fx:id="at2r2" layoutX="454.0" layoutY="434.0" mnemonicParsing="false" text="Less Than" toggleGroup="$t2grp1" />
+                        <RadioButton fx:id="at2r3" layoutX="560.0" layoutY="434.0" mnemonicParsing="false" text="Equal To" toggleGroup="$t2grp1" />
 
                         <RadioButton fx:id="at2r4" layoutX="348.0" layoutY="460.0" mnemonicParsing="false" text="Greater Than">
                         <toggleGroup>
                         <ToggleGroup fx:id="t2grp2" />
                         </toggleGroup></RadioButton>
-                        <RadioButton fx:id="at2r5" layoutX="454.0" layoutY="460.0" mnemonicParsing="false" text="Less Than" toggleGroup="$t2grp2"/>
-                        <RadioButton fx:id="at2r6" layoutX="560.0" layoutY="460.0" mnemonicParsing="false" text="Equal To" toggleGroup="$t2grp2"/>
+                        <RadioButton fx:id="at2r5" layoutX="454.0" layoutY="460.0" mnemonicParsing="false" text="Less Than" toggleGroup="$t2grp2" />
+                        <RadioButton fx:id="at2r6" layoutX="560.0" layoutY="460.0" mnemonicParsing="false" text="Equal To" toggleGroup="$t2grp2" />
 
-                        <RadioButton fx:id="at2r7" layoutX="348.0" layoutY="486.0" mnemonicParsing="false" text="Greater Than" >
+                        <RadioButton fx:id="at2r7" layoutX="348.0" layoutY="486.0" mnemonicParsing="false" text="Greater Than">
                         <toggleGroup>
                         <ToggleGroup fx:id="t2grp3" />
                         </toggleGroup></RadioButton>
-                        <RadioButton fx:id="at2r8" layoutX="454.0" layoutY="483.0" mnemonicParsing="false" text="Less Than" toggleGroup="$t2grp3"/>
-                        <RadioButton fx:id="at2r9" layoutX="560.0" layoutY="486.0" mnemonicParsing="false" text="Equal To" toggleGroup="$t2grp3"/>
+                        <RadioButton fx:id="at2r8" layoutX="454.0" layoutY="483.0" mnemonicParsing="false" text="Less Than" toggleGroup="$t2grp3" />
+                        <RadioButton fx:id="at2r9" layoutX="560.0" layoutY="486.0" mnemonicParsing="false" text="Equal To" toggleGroup="$t2grp3" />
 
-                        <RadioButton fx:id="at2r10" layoutX="349.0" layoutY="512.0" mnemonicParsing="false" text="Greater Than" >
+                        <RadioButton fx:id="at2r10" layoutX="349.0" layoutY="512.0" mnemonicParsing="false" text="Greater Than">
                         <toggleGroup>
                         <ToggleGroup fx:id="t2grp4" />
                         </toggleGroup></RadioButton>
-                        <RadioButton fx:id="at2r11" layoutX="454.0" layoutY="512.0" mnemonicParsing="false" text="Less Than" toggleGroup="$t2grp4"/>
-                        <RadioButton fx:id="at2r12" layoutX="560.0" layoutY="512.0" mnemonicParsing="false" text="Equal To" toggleGroup="$t2grp4"/>
+                        <RadioButton fx:id="at2r11" layoutX="454.0" layoutY="512.0" mnemonicParsing="false" text="Less Than" toggleGroup="$t2grp4" />
+                        <RadioButton fx:id="at2r12" layoutX="560.0" layoutY="512.0" mnemonicParsing="false" text="Equal To" toggleGroup="$t2grp4" />
 
-                        <RadioButton fx:id="at2r13" layoutX="349.0" layoutY="538.0" mnemonicParsing="false" text="Greater Than" >
+                        <RadioButton fx:id="at2r13" layoutX="349.0" layoutY="538.0" mnemonicParsing="false" text="Greater Than">
                         <toggleGroup>
                         <ToggleGroup fx:id="t2grp5" />
                         </toggleGroup></RadioButton>
-                        <RadioButton fx:id="at2r14" layoutX="454.0" layoutY="538.0" mnemonicParsing="false" text="Less Than" toggleGroup="$t2grp5"/>
-                        <RadioButton fx:id="at2r15" layoutX="560.0" layoutY="538.0" mnemonicParsing="false" text="Equal To" toggleGroup="$t2grp5"/>
+                        <RadioButton fx:id="at2r14" layoutX="454.0" layoutY="538.0" mnemonicParsing="false" text="Less Than" toggleGroup="$t2grp5" />
+                        <RadioButton fx:id="at2r15" layoutX="560.0" layoutY="538.0" mnemonicParsing="false" text="Equal To" toggleGroup="$t2grp5" />
 
 
 
 
-                        <TextField layoutX="666.0" layoutY="533.0" prefHeight="31.0" prefWidth="100.0" promptText="Percent" />
+                        <TextField fx:id="at2text7" layoutX="666.0" layoutY="533.0" prefHeight="31.0" prefWidth="100.0" promptText="Percent" />
                      </children>
                   </AnchorPane>
             </content>
@@ -130,10 +139,10 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="118.0" layoutY="59.0" text="Appiclations Dated From" />
-                        <DatePicker layoutX="330.0" layoutY="54.0" />
+                        <DatePicker fx:id="at3dp1" layoutX="330.0" layoutY="54.0" />
                         <Label layoutX="120.0" layoutY="110.0" text="Appications Dated Upto" />
-                        <DatePicker layoutX="330.0" layoutY="105.0" />
-                        <Button layoutX="284.0" layoutY="195.0" mnemonicParsing="false" text="Show Filtered Results" />
+                        <DatePicker fx:id="at3dp2" layoutX="330.0" layoutY="105.0" />
+                        <Button fx:id="at3filter" layoutX="284.0" layoutY="195.0" mnemonicParsing="false" onAction="#submitClick" text="Show Filtered Results" />
                      </children>
                   </AnchorPane>
               </content>

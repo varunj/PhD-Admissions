@@ -3,6 +3,6 @@ newarr = []
 for eachline in f:
 	newarr.append(eachline.split(", "))
 
-for eachElement in newarr[0]:
+for eachElement in newarr[6]:
 	print eachElement
 f.close()

@@ -5,14 +5,19 @@
  */
 package apcourseproject;
 
+import java.awt.Desktop;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
@@ -25,6 +30,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -34,8 +40,10 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import javafx.util.Callback;
 /**
  *
  * @author VarunJain
@@ -278,6 +286,8 @@ public class ApplicantController implements Initializable {
     private Label t2wran1;
     @FXML
     private Label t2wran2;
+    @FXML
+    private ToggleGroup xx;
     //</editor-fold>
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -601,6 +611,23 @@ public class ApplicantController implements Initializable {
                 catch(Exception e) {} 
             }
         });
+        // t1 date
+        t1dp.setValue(LocalDate.now());
+        Callback<DatePicker, DateCell> dayCellFactory = dp -> new DateCell()
+        {
+            public void updateItem(LocalDate item, boolean empty)
+            {
+                super.updateItem(item, empty);
+
+                if(item.isAfter(LocalDate.now()))
+                {
+                    setStyle("-fx-background-color: #ffc0cb;");
+                    setDisable(true);
+                    addEventFilter(MouseEvent.MOUSE_CLICKED, e -> e.consume());
+                }
+            }
+        };
+        t1dp.setDayCellFactory(dayCellFactory);
     }    
     
     @FXML
@@ -658,7 +685,7 @@ public class ApplicantController implements Initializable {
             if (t1rb11.isSelected() == true) {
                 data = data + "No" + ", ";
             }
-            data = data + t1dp.getValue().getYear() + "/" + t1dp.getValue().getMonthValue() + "/" + t1dp.getValue().getDayOfMonth() + ", ";
+            data = data + t1dp.getValue()+ ", ";
             if (t1rb12.isSelected() == true) {
                 data = data + "Yes" + ", ";
             }
@@ -847,5 +874,21 @@ public class ApplicantController implements Initializable {
     private void t2marks2press(ActionEvent event) {
         t2text34.setDisable(false);
         t2text33.setDisable(true);
+    }
+
+    @FXML
+    private void hyp2(ActionEvent event) throws IOException, URISyntaxException {
+        if(Desktop.isDesktopSupported())
+        {
+            Desktop.getDesktop().browse(new URI("http://phdadmissions.iiitd.edu.in/contact/"));
+        }
+    }
+
+    @FXML
+    private void hyp1(ActionEvent event) throws IOException, URISyntaxException {
+        if(Desktop.isDesktopSupported())
+        {
+            Desktop.getDesktop().browse(new URI("http://phdadmissions.iiitd.edu.in/faq/"));
+        }
     }
 }
