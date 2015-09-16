@@ -1,8 +1,4 @@
-apex.varun@hotmai.com, Varun Jain, 2014170, Sector 45, 9871335244, Computer Science, A, B, C, Male, General, No, 2015/9/4, No, Vipin Jain, Indian, Sector 45, 122003, CBSE, 100, 2012, CBSE, 96, 2014, none, none, none, none, none, none, none, 100, NULL, 20150914160652, 
+m, l, ml, mlm, 080, Electronics and Communication, ljkjk, jk, jk, Male, ST, Yes, 2015/9/1, No, mlkmkl, India,  m, NULL, ,mkm, 89, 89, 9, 89, 98, nk, kj, j, j, kj, Delhi, 8, 100, NULL, D:\Archive\Box Sync\College Current\1.c, C:\Users\VarunJain\Desktop\Downloaded Files\vm-freespace.pdf, NULL, NULL, NULL, NULL, NULL, NULL, NULL, sadasd, NULL, NULL, NULL, NULL, NULL, NULL, NULL, asdas, Delhi, NULL, NULL, NULL, NULL, 100, 20150916152336, 
 
-ask, mkm, km, k, mk, Electronics and Communication, mk, mk, mk, Female, ST, No, 2015/9/5, No, lmkm, km, km, k, kk, k, mk, mk, m, km, km, km, km, k, mk, m, k, 100, NULL, 20150914161458, 
-
-ask, mkm, km, k, mk, Electronics and Communication, mk, mk, mk, Female, ST, No, 2015/9/5, No, lmkm, km, km, k, kk, k, mk, mk, m, km, km, km, km, k, mk, m, k, 90, NULL, 20150914161519, 
-
-ask, mkm, km, k, mk, Electronics and Communication, mk, mk, mk, Female, ST, No, 2015/9/5, No, lmkm, km, km, k, kk, k, mk, mk, m, km, km, km, km, k, mk, m, k, 75, NULL, 20150914161536, 
+m, l, ml, mlm, 080, Electronics and Communication, ljkjk, jk, jk, Male, ST, Yes, 2015/9/1, No, mlkmkl, India,  m, NULL, ,mkm, 89, 89, 9, 89, 98, nk, kj, j, j, kj, Delhi, 8, 100, NULL, D:\Archive\Box Sync\College Current\1.c, C:\Users\VarunJain\Desktop\Downloaded Files\vm-freespace.pdf, NULL, NULL, NULL, NULL, NULL, NULL, NULL, sadasd, NULL, NULL, NULL, NULL, NULL, NULL, NULL, asdas, Delhi, NULL, NULL, NULL, NULL, 100, 20150916152336, 
 
