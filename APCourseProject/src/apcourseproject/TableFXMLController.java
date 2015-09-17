@@ -58,7 +58,15 @@ public class TableFXMLController implements Initializable {
             table1col3.setCellValueFactory(new PropertyValueFactory<>("link"));
             table1.setItems(data);
         }
-        catch (Exception e) {}
+        catch (Exception e) 
+        {
+            table1.setEditable(true);
+            ObservableList<addRectoTable> data = FXCollections.observableArrayList();
+            table1col1.setCellValueFactory(new PropertyValueFactory<>("enroll"));
+            table1col2.setCellValueFactory(new PropertyValueFactory<>("name"));
+            table1col3.setCellValueFactory(new PropertyValueFactory<>("link"));
+            table1.setItems(data);
+        }
     }    
     
 }

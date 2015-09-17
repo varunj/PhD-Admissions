@@ -1,8 +1,0 @@
-#include <stdlib.h>
-
-int main()
-{
-  system("gcc -o 1 2.c");
-  system("xterm -e ./1");
-  return 0;
-}

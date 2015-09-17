@@ -6,7 +6,11 @@
 package apcourseproject;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.chrono.HijrahChronology;
@@ -146,6 +150,7 @@ public class AdminFXMLController implements Initializable {
     private Button at3filter;
     
     ArrayList<String[]> records = new ArrayList<String[]>();
+    ArrayList<String[]> recordsFiltered = new ArrayList<String[]>();
 
 // </editor-fold>
 
@@ -234,8 +239,13 @@ public class AdminFXMLController implements Initializable {
                 }
             }
         };
-        at3dp2.setDayCellFactory(dayCellFactory3);
-        //-------------------------------------------------------------------------------------------------------------
+        at3dp2.setDayCellFactory(dayCellFactory3);      
+    }    
+
+    @FXML
+    private void submitClick(ActionEvent event) {
+        records.clear();
+        recordsFiltered.clear();
         BufferedReader fileStream = null;
         String eachRec = "";
         try
@@ -251,19 +261,7 @@ public class AdminFXMLController implements Initializable {
             }
         }
         catch (Exception e) {}
-        
-        for (int i = 0; i < records.size(); i++)
-        {
-            for (int ii = 0; ii < records.get(i).length; ii++)
-            {
-                System.out.print(records.get(i)[ii] + "   ");
-            }
-            System.out.println("");
-        }
-    }    
-
-    @FXML
-    private void submitClick(ActionEvent event) {
+        //-----------------------------------------------------------------------------------------------------
         // tab 1 work------------------------------------------------------------------------------------------
         // email
         if (!at1text1.getText().equals(""))
@@ -600,15 +598,52 @@ public class AdminFXMLController implements Initializable {
                 records.get(i)[58] = "0";
             }
         }
-        
+        // make new arraylist
         for (int i = 0; i < records.size(); i++)
         {
-            for (int ii = 0; ii < records.get(i).length; ii++)
+            if (records.get(i)[58].equals("1"))
             {
-                System.out.print(records.get(i)[ii] + "   ");
+                recordsFiltered.add(records.get(i));
+            }
+        }
+
+        for (int i = 0; i < recordsFiltered.size(); i++)
+        {
+            for (int ii = 0; ii < recordsFiltered.get(i).length; ii++)
+            {
+                System.out.print(recordsFiltered.get(i)[ii] + "   ");
             }
             System.out.println("");
         }
+
+        // clear folder
+        File toClr = new File("./archiveTxt//");
+        File[] files = toClr.listFiles();
+        if(files != null) 
+        {
+            for (File f: files) 
+            {
+                
+                f.delete();
+            }
+        }
+
+        // make new individual files
+        for (int i = 0; i < recordsFiltered.size(); i++)
+        {
+            try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("./archiveTxt//" + recordsFiltered.get(i)[57] +".txt", true)))) 
+            {
+                for (int ii = 0; ii < recordsFiltered.get(i).length; ii++)
+                {
+                    out.print(recordsFiltered.get(i)[ii]);
+                    out.print(", ");
+                }
+            }
+            catch (Exception e) {}
+        
+        }
+
+        
 
     }
 
