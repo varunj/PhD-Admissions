@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" prefHeight="1750.0" prefWidth="917.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apcourseproject.ApplicantController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" prefHeight="540.0" prefWidth="917.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apcourseproject.ApplicantController">
    <children>
       <ImageView fitHeight="57.0" fitWidth="917.0" pickOnBounds="true">
          <image>
@@ -25,11 +25,11 @@
             <Font size="19.0" />
          </font>
       </Hyperlink>
-      <TabPane layoutY="57.0" prefHeight="2000.0" prefWidth="917.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0">
+      <TabPane layoutY="57.0" prefHeight="540.0" prefWidth="917.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0">
         <tabs>
           <Tab fx:id="tab1" text="Personal Information">
                <content>
-                  <ScrollPane fx:id="scroll1" hbarPolicy="NEVER" maxHeight="-Infinity" prefHeight="1118.0" prefWidth="917.0">
+                  <ScrollPane fx:id="scroll1" hbarPolicy="NEVER" maxHeight="-Infinity" prefHeight="540.0" prefWidth="917.0">
                     <content>
                       <AnchorPane fx:id="t1text10" minHeight="0.0" minWidth="0.0" prefHeight="1126.0" prefWidth="917.0" style="-fx-border-color: white;">
                            <children>

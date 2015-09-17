@@ -5,10 +5,14 @@
  */
 package apcourseproject;
 
+import java.util.Optional;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 
 /**
@@ -16,17 +20,38 @@ import javafx.stage.Stage;
  * @author VarunJain
  */
 public class APCourseProject extends Application {
-    
+    static Stage stage2;
     @Override
     public void start(Stage stage) throws Exception {
-//        Parent root = FXMLLoader.load(getClass().getResource("AdminFXML.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("tableFXML.fxml"));
-//        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        stage2 = stage;
+        Parent root = null;
+        TextInputDialog dialog = new TextInputDialog("");
+        dialog.setTitle("User Switcher");
+        dialog.setHeaderText("Enter 1 to confirm you are human. Admins will know what do do.");
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent())
+        {
+            if (result.get().equals("1"))
+            {
+                root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+            if (result.get().equals("0"))
+            {
+                root = FXMLLoader.load(getClass().getResource("AdminFXML.fxml"));
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+            else
+            {
+                System.out.println("Stop being an idiot!");
+            }   
+        }
         
-        Scene scene = new Scene(root);
         
-        stage.setScene(scene);
-        stage.show();
     }
 
     /**

@@ -10,6 +10,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.time.LocalDate;
@@ -19,7 +20,9 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -243,7 +246,7 @@ public class AdminFXMLController implements Initializable {
     }    
 
     @FXML
-    private void submitClick(ActionEvent event) {
+    private void submitClick(ActionEvent event) throws IOException {
         records.clear();
         recordsFiltered.clear();
         BufferedReader fileStream = null;
@@ -642,7 +645,27 @@ public class AdminFXMLController implements Initializable {
             catch (Exception e) {}
         
         }
+        for (int i = 0; i < recordsFiltered.size(); i++)
+        {
+            try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("./archiveTxt//cumm.txt", true)))) 
+            {
+                for (int ii = 0; ii < recordsFiltered.get(i).length; ii++)
+                {
+                    out.print(recordsFiltered.get(i)[ii]);
+                    out.print(", ");
+                }
+                out.println("\n");
+            }
+            catch (Exception e) {}
+        
+        }
 
+        
+        // open table window
+        Parent parent = FXMLLoader.load(getClass().getResource("/apcourseproject/tableFXML.fxml"));
+        Scene scene = new Scene(parent);
+        APCourseProject.stage2.setScene(scene);
+        APCourseProject.stage2.show();
         
 
     }
