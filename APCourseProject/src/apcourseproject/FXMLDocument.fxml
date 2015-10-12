@@ -348,6 +348,15 @@
                   </AnchorPane>
               </content>
             </Tab>
+            <Tab text="Import">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="importButton" layoutX="129.0" layoutY="56.0" mnemonicParsing="false" onAction="#importButtonClick" text="Import from File" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

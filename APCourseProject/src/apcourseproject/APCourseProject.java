@@ -23,6 +23,7 @@ public class APCourseProject extends Application {
     static Stage stage2;
     @Override
     public void start(Stage stage) throws Exception {
+        
         stage2 = stage;
         Parent root = null;
         TextInputDialog dialog = new TextInputDialog("");

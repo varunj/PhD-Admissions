@@ -6,8 +6,10 @@
 package apcourseproject;
 
 import java.awt.Desktop;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,9 +18,12 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -288,9 +293,12 @@ public class ApplicantController implements Initializable {
     private Label t2wran2;
     @FXML
     private ToggleGroup xx;
+    @FXML
+    private Button importButton;
     //</editor-fold>
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         uid = new SimpleDateFormat("yyyyMMddHHmmss").format(Calendar.getInstance().getTime());
         // t1text1 unfilled check
         t1text1.textProperty().addListener(new ChangeListener<String>() 
@@ -891,4 +899,161 @@ public class ApplicantController implements Initializable {
             Desktop.getDesktop().browse(new URI("http://phdadmissions.iiitd.edu.in/faq/"));
         }
     }
+
+    @FXML
+    private void importButtonClick(ActionEvent event) {
+        BufferedReader fileStream = null;
+        String eachRec = "";
+        int countLine = 0;
+        try
+        {
+            fileStream = new BufferedReader(new FileReader("./src/Data_to_Import.csv"));
+            while ((eachRec = fileStream.readLine()) != null)
+            {
+                if (countLine != 0)
+                {
+                    eachRec = eachRec.replace(", ", "-*-");
+                    eachRec = eachRec.replace(",", ", ");
+                    eachRec = eachRec.replace("-*-", ",");
+                    eachRec = eachRec.replace("\"", "");
+                    eachRec = eachRec.replace("\"", "");
+                    ArrayList<String> arrListFromInp = new ArrayList<String>();
+                    ArrayList<String> arrListOut = new ArrayList<String>();
+                    String[] strArrSplit = eachRec.split(", ");
+                    for (String x : strArrSplit)
+                    {
+                        arrListFromInp.add(x);
+                    }
+
+                    for (int i = 0; i < arrListFromInp.size(); i++)
+                    {
+                        if (arrListFromInp.get(i).equals(""))
+                        {
+                            arrListFromInp.set(i, "NULL");
+                        }          
+                    }
+                    for (int i = 0; i < 62; i++)
+                    {
+                        if (i == 0) {arrListOut.add(0, arrListFromInp.get(0));}
+                        if (i == 1) {arrListOut.add(1, arrListFromInp.get(1));}
+                        if (i == 2) {arrListOut.add(2, arrListFromInp.get(59));}
+                        if (i == 3) {arrListOut.add(3, arrListFromInp.get(2));}
+                        if (i == 4) {arrListOut.add(4, arrListFromInp.get(3));}
+                        if (i == 5) {arrListOut.add(5, arrListFromInp.get(4));}
+                        if (i == 6) {arrListOut.add(6, arrListFromInp.get(5));}
+                        if (i == 7) {arrListOut.add(7, arrListFromInp.get(6));}
+                        if (i == 8) {arrListOut.add(8, arrListFromInp.get(7));}
+                        if (i == 9) {arrListOut.add(9, arrListFromInp.get(8));}
+                        if (i == 10) {arrListOut.add(10, arrListFromInp.get(9));}
+                        if (i == 11) {arrListOut.add(11, arrListFromInp.get(10));}
+                        if (i == 12) {arrListOut.add(12, arrListFromInp.get(11));}
+                        if (i == 13) {arrListOut.add(13, arrListFromInp.get(12));}
+                        if (i == 14) {arrListOut.add(14, arrListFromInp.get(13));}
+                        if (i == 15) {arrListOut.add(15, arrListFromInp.get(14));}
+                        if (i == 16) {arrListOut.add(16, arrListFromInp.get(15));}
+                        if (i == 17) {arrListOut.add(17, arrListFromInp.get(16));}
+                        if (i == 18) {arrListOut.add(18, arrListFromInp.get(17));}
+                        if (i == 19) {arrListOut.add(19, arrListFromInp.get(18));}
+                        if (i == 20) {arrListOut.add(20, arrListFromInp.get(19));}
+                        if (i == 21) {arrListOut.add(21, arrListFromInp.get(20));}
+                        if (i == 22) {arrListOut.add(22, arrListFromInp.get(21));}
+                        if (i == 23) {arrListOut.add(23, arrListFromInp.get(22));}
+                        if (i == 24) {arrListOut.add(24, arrListFromInp.get(23));}
+                        if (i == 25) {arrListOut.add(25, arrListFromInp.get(24));}
+                        if (i == 26) {arrListOut.add(26, arrListFromInp.get(25));}
+                        if (i == 27) {arrListOut.add(27, arrListFromInp.get(26));}
+                        if (i == 28) {arrListOut.add(28, arrListFromInp.get(27));}
+                        if (i == 29) {arrListOut.add(29, arrListFromInp.get(28));}
+                        if (i == 30) {arrListOut.add(30, arrListFromInp.get(29));}
+                        if (i == 31) {
+                            if (arrListFromInp.get(30).split(":")[0].equals("Marks")) {
+                                arrListOut.add(31, arrListFromInp.get(30).split(":")[1]);
+                            }
+                            if (arrListFromInp.get(30).split(":")[0].equals("CGPA")) {
+                                int xx = 0;
+                                xx = (int) (Double.parseDouble(arrListFromInp.get(30).split(":")[1]) * 10.0);
+                                arrListOut.add(31, Integer.toString(xx));
+                            } 
+                        }
+
+                        if (i == 32) {arrListOut.add(32, arrListFromInp.get(57));}
+                        if (i == 33) {arrListOut.add(33, "NULL");}
+                        if (i == 34) {arrListOut.add(34, "NULL");}
+
+                        if (i == 35) {arrListOut.add(35, arrListFromInp.get(32));}
+                        if (i == 36) {arrListOut.add(36, arrListFromInp.get(33));}
+                        if (i == 37) {arrListOut.add(37, arrListFromInp.get(34));}
+                        if (i == 38) {arrListOut.add(38, arrListFromInp.get(35));}
+                        if (i == 39) {
+                            if (arrListFromInp.get(31).equals("No")) {arrListOut.add(35, "NULL");arrListOut.add(36, "NULL");arrListOut.add(37, "NULL");arrListOut.add(38, "NULL");}
+                        }
+
+                        if (i == 40) {arrListOut.add(39, arrListFromInp.get(52));}
+                        if (i == 41) {arrListOut.add(40, arrListFromInp.get(53));}
+                        if (i == 42) {arrListOut.add(41, arrListFromInp.get(54));}
+                        if (i == 43) {arrListOut.add(42, arrListFromInp.get(55));}
+                        if (i == 44) {arrListOut.add(43, arrListFromInp.get(56));}
+                        if (i == 45) {
+                            if (arrListFromInp.get(51).equals("No")) {arrListOut.add(39, "NULL");arrListOut.add(40, "NULL");arrListOut.add(41, "NULL");arrListOut.add(42, "NULL");arrListOut.add(43, "NULL");}
+                        }
+
+                        if (i == 46) {arrListOut.add(44, arrListFromInp.get(46));}
+                        if (i == 47) {arrListOut.add(45, arrListFromInp.get(47));}
+                        if (i == 48) {arrListOut.add(46, arrListFromInp.get(48));}
+                        if (i == 49) {arrListOut.add(47, arrListFromInp.get(49));}
+                        if (i == 50) {arrListOut.add(48, arrListFromInp.get(50));}
+                        if (i == 51) {
+                            if (arrListFromInp.get(45).equals("No")) {arrListOut.add(44, "NULL");arrListOut.add(45, "NULL");arrListOut.add(46, "NULL");arrListOut.add(47, "NULL");arrListOut.add(48, "NULL");}
+                        }
+
+                        if (i == 52) {arrListOut.add(49, arrListFromInp.get(39));}
+                        if (i == 53) {arrListOut.add(50, arrListFromInp.get(41));}
+                        if (i == 54) {arrListOut.add(51, arrListFromInp.get(42));}
+                        if (i == 55) {arrListOut.add(52, arrListFromInp.get(38));}
+                        if (i == 56) {arrListOut.add(53, arrListFromInp.get(37));}
+                        if (i == 57) {arrListOut.add(54, arrListFromInp.get(40));}
+                        if (i == 58) {arrListOut.add(55, arrListFromInp.get(43));}
+                        if (i == 59) {
+                            if (arrListFromInp.get(44).split(":")[0].equals("Marks")) {
+                                arrListOut.add(56, arrListFromInp.get(44).split(":")[1]);
+                            }
+                            if (arrListFromInp.get(44).split(":")[0].equals("CGPA")) {
+                                int xx = 0;
+                                xx = (int) (Double.parseDouble(arrListFromInp.get(44).split(":")[1]) * 10.0);
+                                arrListOut.add(56, Integer.toString(xx));
+                            } 
+                        }
+                        if (i == 60) {
+                            if (arrListFromInp.get(36).equals("No")) {arrListOut.add(49, "NULL");arrListOut.add(50, "NULL");arrListOut.add(51, "NULL");arrListOut.add(52, "NULL");arrListOut.add(53, "NULL");arrListOut.add(54, "NULL");arrListOut.add(55, "NULL");arrListOut.add(56, "NULL");}
+                        }
+
+                        if (i == 61) {
+                            Calendar cal = Calendar.getInstance();
+                            String time = arrListFromInp.get(58), timeFin = "";
+                            String[] timeSplit = time.split(" ");
+                            cal.setTime(new SimpleDateFormat("MMM").parse((timeSplit[0].split("-"))[1])); 
+                            timeFin = (timeSplit[0].split("-"))[0] + new DecimalFormat("00").format((cal.get(Calendar.MONTH) + 1)) + (timeSplit[0].split("-"))[2] + (timeSplit[1].split(":"))[0] + (timeSplit[1].split(":"))[1] + (timeSplit[1].split(":"))[2]; 
+                            arrListOut.add(57, timeFin);
+                        }
+                    }
+                    List<String> arrListOutFin = arrListOut.subList(0, 58);
+                    String out = "";
+                    for (String x : arrListOutFin)
+                    {
+                        out = out + x + ", ";
+                    }
+                    try(PrintWriter outt = new PrintWriter(new BufferedWriter(new FileWriter("./src/applicantDetails.txt", true)))) 
+                    {
+                        outt.print(out);
+                        outt.println("\n");
+                    }
+                    catch (Exception e) {}
+                }
+                countLine++;
+            }
+                
+        }
+        catch (Exception e) {System.out.println("!!!");}
+    }
+
 }
