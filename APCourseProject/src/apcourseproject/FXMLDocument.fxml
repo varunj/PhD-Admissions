@@ -170,7 +170,7 @@
                                 <panes>
                                   <TitledPane animated="false" maxHeight="-Infinity" text="Are you applying for ECE PhD?">
                                     <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="300.0">
+                                      <AnchorPane fx:id="anchor" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="300.0">
                                              <children>
                                                 <Label layoutX="23.0" layoutY="14.0" text="ECE PhD Subject Reference">
                                                    <font>
@@ -204,7 +204,7 @@
                                                 </Label>
                                                 <Label layoutX="21.0" layoutY="46.0" text="Area" />
                                                 <TextField fx:id="t2text17" layoutX="99.0" layoutY="41.0" prefHeight="31.0" prefWidth="191.0" />
-                                                <Label layoutX="21.0" layoutY="67.0" prefHeight="57.0" prefWidth="77.0" text="Year of Graduation" wrapText="true" />
+                                                <Label layoutX="21.0" layoutY="67.0" prefHeight="57.0" prefWidth="77.0" text="Year of Graduation*" wrapText="true" />
                                                 <TextField fx:id="t2text18" layoutX="101.0" layoutY="80.0" prefHeight="31.0" prefWidth="189.0" />
                                                 <Label layoutX="21.0" layoutY="120.0" text="Marks (100)" />
                                                 <TextField fx:id="t2text19" layoutX="98.0" layoutY="123.0" prefHeight="31.0" prefWidth="192.0" />
@@ -227,7 +227,7 @@
                                                 <TextField fx:id="t2text22" layoutX="99.0" layoutY="22.0" />
                                                 <Label layoutX="14.0" layoutY="64.0" text="Subject" />
                                                 <TextField fx:id="t2text23" layoutX="99.0" layoutY="59.0" />
-                                                <Label layoutX="14.0" layoutY="101.0" text="Year" />
+                                                <Label layoutX="14.0" layoutY="101.0" text="Year*" />
                                                 <TextField fx:id="t2text24" layoutX="99.0" layoutY="96.0" />
                                                 <Label layoutX="14.0" layoutY="139.0" text="Score" />
                                                 <TextField fx:id="t2text25" layoutX="99.0" layoutY="134.0" />
@@ -257,7 +257,7 @@
                                                 <TextField fx:id="t2text30" layoutX="137.0" layoutY="178.0" />
                                                 <Label layoutX="14.0" layoutY="222.0" text="Thesis Title" />
                                                 <TextField fx:id="t2text31" layoutX="137.0" layoutY="217.0" />
-                                                <Label layoutX="14.0" layoutY="266.0" text="Year" />
+                                                <Label layoutX="14.0" layoutY="266.0" text="Year*" />
                                                 <TextField fx:id="t2text32" layoutX="137.0" layoutY="261.0" />
                                                 <Label layoutX="14.0" layoutY="303.0" text="CGPA / MARKS" />
                                                 <RadioButton fx:id="t2rb3" layoutX="137.0" layoutY="303.0" mnemonicParsing="false" onAction="#t2cgpa2press" text="CGPA">

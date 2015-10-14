@@ -610,14 +610,14 @@ public class AdminFXMLController implements Initializable {
             }
         }
 
-        for (int i = 0; i < recordsFiltered.size(); i++)
-        {
-            for (int ii = 0; ii < recordsFiltered.get(i).length; ii++)
-            {
-                System.out.print(recordsFiltered.get(i)[ii] + "   ");
-            }
-            System.out.println("");
-        }
+//        for (int i = 0; i < recordsFiltered.size(); i++)
+//        {
+//            for (int ii = 0; ii < recordsFiltered.get(i).length; ii++)
+//            {
+//                System.out.print(recordsFiltered.get(i)[ii] + "   ");
+//            }
+//            System.out.println("");
+//        }
 
         // clear folder
         File toClr = new File("./archiveTxt//");

@@ -6,6 +6,7 @@
 package apcourseproject;
 
 import java.awt.Desktop;
+import java.awt.event.FocusEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -295,6 +296,8 @@ public class ApplicantController implements Initializable {
     private ToggleGroup xx;
     @FXML
     private Button importButton;
+    @FXML
+    private AnchorPane anchor;
     //</editor-fold>
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -636,6 +639,8 @@ public class ApplicantController implements Initializable {
             }
         };
         t1dp.setDayCellFactory(dayCellFactory);
+     
+        
     }    
     
     @FXML
@@ -946,7 +951,9 @@ public class ApplicantController implements Initializable {
                         if (i == 9) {arrListOut.add(9, arrListFromInp.get(8));}
                         if (i == 10) {arrListOut.add(10, arrListFromInp.get(9));}
                         if (i == 11) {arrListOut.add(11, arrListFromInp.get(10));}
-                        if (i == 12) {arrListOut.add(12, arrListFromInp.get(11));}
+                        // added
+                        if (i == 12) {arrListOut.add(12, arrListFromInp.get(11).split("-")[2] + "-" + arrListFromInp.get(11).split("-")[1] + "-" + arrListFromInp.get(11).split("-")[0]);}
+                        // added
                         if (i == 13) {arrListOut.add(13, arrListFromInp.get(12));}
                         if (i == 14) {arrListOut.add(14, arrListFromInp.get(13));}
                         if (i == 15) {arrListOut.add(15, arrListFromInp.get(14));}
