@@ -1043,6 +1043,7 @@ public class ApplicantController implements Initializable {
                             arrListOut.add(57, timeFin);
                         }
                     }
+                    
                     List<String> arrListOutFin = arrListOut.subList(0, 58);
                     String out = "";
                     for (String x : arrListOutFin)

@@ -18,6 +18,8 @@ import java.time.chrono.HijrahChronology;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -170,10 +172,10 @@ public class AdminFXMLController implements Initializable {
         at2drop1.getItems().addAll("Computer Science", "Electronics and Communication", "Computational Biology");
         // t2 drop down category
         at2drop2.getItems().clear();
-        at2drop2.getItems().addAll("BTech");
+        at2drop2.getItems().addAll("B.Tech");
         // t2 drop down category
         at2drop3.getItems().clear();
-        at2drop3.getItems().addAll("MTech");
+        at2drop3.getItems().addAll("M.Tech");
         // t2 drop down category
         at2drop4.getItems().clear();
         at2drop4.getItems().addAll("CBSE", "IB");
@@ -243,6 +245,79 @@ public class AdminFXMLController implements Initializable {
             }
         };
         at3dp2.setDayCellFactory(dayCellFactory3);      
+        
+        
+        // marks
+        at2text3.textProperty().addListener(new ChangeListener<String>() 
+        {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    if (!(newValue.matches("\\d*") || newValue.contains("."))) at2text3.setText(oldValue);
+                    if (Double.parseDouble(newValue) > 100.0) at2text3.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
+        // marks
+        at2text4.textProperty().addListener(new ChangeListener<String>() 
+        {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    if (!(newValue.matches("\\d*") || newValue.contains("."))) at2text4.setText(oldValue);
+                    if (Double.parseDouble(newValue) > 100.0) at2text4.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
+        // marks
+        at2text5.textProperty().addListener(new ChangeListener<String>() 
+        {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    if (!(newValue.matches("\\d*") || newValue.contains("."))) at2text5.setText(oldValue);
+                    if (Double.parseDouble(newValue) > 100.0) at2text5.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
+        // marks
+        at2text6.textProperty().addListener(new ChangeListener<String>() 
+        {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    if (!(newValue.matches("\\d*") || newValue.contains("."))) at2text6.setText(oldValue);
+                    if (Double.parseDouble(newValue) > 100.0) at2text6.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
+        // marks
+        at2text7.textProperty().addListener(new ChangeListener<String>() 
+        {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) 
+            {
+                try
+                {
+                    if (!(newValue.matches("\\d*") || newValue.contains("."))) at2text7.setText(oldValue);
+                    if (Double.parseDouble(newValue) > 1000.0) at2text7.setText(oldValue);  
+                }
+                catch(Exception e) {} 
+            }
+        });
+        
     }    
 
     @FXML
@@ -476,7 +551,7 @@ public class AdminFXMLController implements Initializable {
         {
             for (int i = 0; i < records.size(); i++)
             {
-                if (!(records.get(i)[26].equals(a2text1.getText())))
+                if (!(records.get(i)[26].contains(a2text1.getText())))
                 {
                     records.get(i)[58] = "0";
                 }
@@ -498,18 +573,26 @@ public class AdminFXMLController implements Initializable {
         {
             for (int i = 0; i < records.size(); i++)
             {
-                if (at2r1.isSelected() == true && (Double.parseDouble(records.get(i)[19]) < Double.parseDouble(at2text3.getText())) )
+                if (records.get(i)[19].equals("NULL"))
                 {
                     records.get(i)[58] = "0";
                 }
-                if (at2r2.isSelected() == true && (Double.parseDouble(records.get(i)[19]) > Double.parseDouble(at2text3.getText())) )
+                else
                 {
-                    records.get(i)[58] = "0";
+                    if (at2r1.isSelected() == true && (Double.parseDouble(records.get(i)[19]) < Double.parseDouble(at2text3.getText())) )
+                    {
+                        records.get(i)[58] = "0";
+                    }
+                    if (at2r2.isSelected() == true && (Double.parseDouble(records.get(i)[19]) > Double.parseDouble(at2text3.getText())) )
+                    {
+                        records.get(i)[58] = "0";
+                    }
+                    if (at2r3.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[19]), Double.parseDouble(at2text3.getText()))) != 0 ))
+                    {
+                        records.get(i)[58] = "0";
+                    }
                 }
-                if (at2r3.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[19]), Double.parseDouble(at2text3.getText()))) != 0 ))
-                {
-                    records.get(i)[58] = "0";
-                }
+                
             }
         }
         // xii percent
@@ -517,18 +600,26 @@ public class AdminFXMLController implements Initializable {
         {
             for (int i = 0; i < records.size(); i++)
             {
-                if (at2r4.isSelected() == true && (Double.parseDouble(records.get(i)[22]) < Double.parseDouble(at2text4.getText())) )
+                if (records.get(i)[22].equals("NULL"))
                 {
                     records.get(i)[58] = "0";
                 }
-                if (at2r5.isSelected() == true && (Double.parseDouble(records.get(i)[22]) > Double.parseDouble(at2text4.getText())) )
+                else
                 {
-                    records.get(i)[58] = "0";
+                    if (at2r4.isSelected() == true && (Double.parseDouble(records.get(i)[22]) < Double.parseDouble(at2text4.getText())) )
+                    {
+                        records.get(i)[58] = "0";
+                    }
+                    if (at2r5.isSelected() == true && (Double.parseDouble(records.get(i)[22]) > Double.parseDouble(at2text4.getText())) )
+                    {
+                        records.get(i)[58] = "0";
+                    }
+                    if (at2r6.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[22]), Double.parseDouble(at2text4.getText()))) != 0 ))
+                    {
+                        records.get(i)[58] = "0";
+                    }
                 }
-                if (at2r6.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[22]), Double.parseDouble(at2text4.getText()))) != 0 ))
-                {
-                    records.get(i)[58] = "0";
-                }
+                   
             }
         }
         // grad percent
@@ -536,18 +627,26 @@ public class AdminFXMLController implements Initializable {
         {
             for (int i = 0; i < records.size(); i++)
             {
-                if (at2r7.isSelected() == true && (Double.parseDouble(records.get(i)[31]) < Double.parseDouble(at2text5.getText())) )
+                if (records.get(i)[31].equals("NULL"))
                 {
                     records.get(i)[58] = "0";
                 }
-                if (at2r8.isSelected() == true && (Double.parseDouble(records.get(i)[31]) > Double.parseDouble(at2text5.getText())) )
+                else
                 {
-                    records.get(i)[58] = "0";
+                    if (at2r7.isSelected() == true && (Double.parseDouble(records.get(i)[31]) < Double.parseDouble(at2text5.getText())) )
+                    {
+                        records.get(i)[58] = "0";
+                    }
+                    if (at2r8.isSelected() == true && (Double.parseDouble(records.get(i)[31]) > Double.parseDouble(at2text5.getText())) )
+                    {
+                        records.get(i)[58] = "0";
+                    }
+                    if (at2r9.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[31]), Double.parseDouble(at2text5.getText()))) != 0 ))
+                    {
+                        records.get(i)[58] = "0";
+                    }
                 }
-                if (at2r9.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[31]), Double.parseDouble(at2text5.getText()))) != 0 ))
-                {
-                    records.get(i)[58] = "0";
-                }
+                
             }
         }
         // post grad percent
@@ -555,17 +654,24 @@ public class AdminFXMLController implements Initializable {
         {
             for (int i = 0; i < records.size(); i++)
             {
-                if (at2r10.isSelected() == true && (Double.parseDouble(records.get(i)[56]) < Double.parseDouble(at2text6.getText())) )
+                if (records.get(i)[56].equals("NULL"))
                 {
                     records.get(i)[58] = "0";
                 }
-                if (at2r11.isSelected() == true && (Double.parseDouble(records.get(i)[56]) > Double.parseDouble(at2text6.getText())) )
+                else
                 {
-                    records.get(i)[58] = "0";
-                }
-                if (at2r12.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[56]), Double.parseDouble(at2text6.getText()))) != 0 ))
-                {
-                    records.get(i)[58] = "0";
+                    if (at2r10.isSelected() == true && (Double.parseDouble(records.get(i)[56]) < Double.parseDouble(at2text6.getText())) )
+                    {
+                        records.get(i)[58] = "0";
+                    }
+                    if (at2r11.isSelected() == true && (Double.parseDouble(records.get(i)[56]) > Double.parseDouble(at2text6.getText())) )
+                    {
+                        records.get(i)[58] = "0";
+                    }
+                    if (at2r12.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[56]), Double.parseDouble(at2text6.getText()))) != 0 ))
+                    {
+                        records.get(i)[58] = "0";
+                    }
                 }
             }
         }
@@ -574,18 +680,26 @@ public class AdminFXMLController implements Initializable {
         {
             for (int i = 0; i < records.size(); i++)
             {
-                if (at2r13.isSelected() == true && (Double.parseDouble(records.get(i)[42]) < Double.parseDouble(at2text7.getText())) )
+                if (records.get(i)[42].equals("NULL"))
                 {
                     records.get(i)[58] = "0";
                 }
-                if (at2r14.isSelected() == true && (Double.parseDouble(records.get(i)[42]) > Double.parseDouble(at2text7.getText())) )
+                else
                 {
-                    records.get(i)[58] = "0";
+                    if (at2r13.isSelected() == true && (Double.parseDouble(records.get(i)[42]) < Double.parseDouble(at2text7.getText())) )
+                    {
+                        records.get(i)[58] = "0";
+                    }
+                    if (at2r14.isSelected() == true && (Double.parseDouble(records.get(i)[42]) > Double.parseDouble(at2text7.getText())) )
+                    {
+                        records.get(i)[58] = "0";
+                    }
+                    if (at2r15.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[42]), Double.parseDouble(at2text7.getText()))) != 0 ))
+                    {
+                        records.get(i)[58] = "0";
+                    }
                 }
-                if (at2r15.isSelected() == true && ((Double.compare(Double.parseDouble(records.get(i)[42]), Double.parseDouble(at2text7.getText()))) != 0 ))
-                {
-                    records.get(i)[58] = "0";
-                }
+                
             }
         }
 
@@ -669,6 +783,14 @@ public class AdminFXMLController implements Initializable {
         
 
     }
+    
+    
+    
+    
+    //=---------------------
+    
+    
+    
 
     
 }
