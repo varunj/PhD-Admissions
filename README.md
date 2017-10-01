@@ -14,7 +14,11 @@ This app helps to capture all relevant information for a PhD candidate seeking a
 
 # Screenshots
 ![Screen 1](https://imgur.com/ZbvToAH)
+
 ![Screen 2](https://imgur.com/f6MfBgy)
+
 ![Screen 3](https://imgur.com/b2S2SI9)
+
 ![Screen 4](https://imgur.com/Jhvc9vT)
+
 ![Screen 5](https://imgur.com/H2HzpJF)
