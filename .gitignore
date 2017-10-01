@@ -4,3 +4,7 @@
 /JavaFXApplication14/nbproject/private/
 /JavaFXApplication14/dist/
 /JavaFXApplication14/build/
+*.class
+*.classpath
+*.project
+/bin
