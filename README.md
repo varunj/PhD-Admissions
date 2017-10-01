@@ -13,12 +13,12 @@ This app helps to capture all relevant information for a PhD candidate seeking a
 * Select `Run As > Java Application`
 
 # Screenshots
-![Screen 1](https://imgur.com/ZbvToAH)
+![Imgur](https://imgur.com/ZbvToAH)
 
-![Screen 2](https://imgur.com/f6MfBgy)
+![Imgur](https://imgur.com/f6MfBgy)
 
-![Screen 3](https://imgur.com/b2S2SI9)
+![Imgur](https://imgur.com/b2S2SI9)
 
-![Screen 4](https://imgur.com/Jhvc9vT)
+![Imgur](https://imgur.com/Jhvc9vT)
 
-![Screen 5](https://imgur.com/H2HzpJF)
+![Imgur](https://imgur.com/H2HzpJF)
