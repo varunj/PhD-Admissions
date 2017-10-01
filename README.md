@@ -1,5 +1,5 @@
 # Description
-This app helps to capture all relevant information for a PhD candidate seeking admission in IIT Delhi
+This app helps to capture all relevant information for a PhD candidate seeking admission in IIIT Delhi
 
 # Pre-requisites
 * Basic computing knowledge
