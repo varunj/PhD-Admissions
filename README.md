@@ -31,7 +31,7 @@ This app helps to capture all relevant information for a PhD candidate seeking a
 ```
 PhD-Admissions
 
-Copyright (c) 2016 // Your team or developer name 
+ Copyright (C) 2016 Varun Jain <varun14170@iiitd.ac.in>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
