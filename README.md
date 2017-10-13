@@ -26,10 +26,9 @@ This app helps to capture all relevant information for a PhD candidate seeking a
 ### Screen 5
 ![Screen 5](https://i.imgur.com/H2HzpJF.jpg)
 
-##License
+#License
 
 ```
-
 PhD-Admissions
 
 Copyright (c) 2016 // Your team or developer name 
@@ -51,5 +50,3 @@ limitations under the License.
 
 Please fork this repository and contribute back using <a href="https://github.com/varunj/PhD-Admissions/pulls">pull requests.</a><br>
 Any contributions, large or small, major features, bug fixes, additional language translations, unit/integration tests are welcomed.
-=======
-
